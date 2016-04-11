@@ -23,5 +23,7 @@ http://blog.csdn.net/marcus_x/article/details/11709461
 然后分别创建git.exe git-receive-pack.exe git-upload-pack.exe git-upload-archive.exe 的符号链接到copssh安装目录的/bin文件夹下，问题解决！
 
 我的服务器环境为windows server 2008
+
 copssh control panel v2.4.0
+
 git Git-2.8.1-64-bit
