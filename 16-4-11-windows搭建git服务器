@@ -8,3 +8,20 @@
 http://blog.csdn.net/ccf0703/article/details/7578276
 http://blog.csdn.net/marcus_x/article/details/11709461
 http://blog.csdn.net/marcus_x/article/details/11709461
+
+按照文章1所述操作之后在我系统中却不能正常运行，报错信息为：
+`/usr/bin/git.exe: error while loading shared libraries: ?: cannot open shared object file: No such file or directory`
+很明显，这个错误是由于copssh无法读取git执行程序造成的，于是又找了几个文章，尝试过了设置环境变量，包括添加所有的git相关可执行程序为系统环境变量
+然并卵，还是报这个错误。。。。。。。。。。。。
+
+终于找到了这个http://www.jinweijie.com/git/step-by-step-setup-git-server-on-windows-with-copssh-msysgit-and-integrate-git-with-visual-studio/
+
+于是按照这个教程，修改了还是报同样的错
+
+最后看到这个https://github.com/msysgit/msysgit/wiki/Setting-up-a-Git-server-on-Windows-using-Git-for-Windows-and-CopSSH
+
+然后分别创建git.exe git-receive-pack.exe git-upload-pack.exe git-upload-archive.exe 的符号链接到copssh安装目录的/bin文件夹下，问题解决！
+
+我的服务器环境为windows server 2008
+copssh control panel v2.4.0
+git Git-2.8.1-64-bit
