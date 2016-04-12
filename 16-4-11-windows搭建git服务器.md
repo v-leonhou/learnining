@@ -20,6 +20,10 @@ http://blog.csdn.net/marcus_x/article/details/11709461
 
 最后看到这个https://github.com/msysgit/msysgit/wiki/Setting-up-a-Git-server-on-Windows-using-Git-for-Windows-and-CopSSH
 
+在初始化远程仓库时最好使用 git --bare init   而不要使用：git init
+
+   如果使用了git init初始化，则远程仓库的目录下，也包含work tree，当本地仓库向远程仓库push时,   如果远程仓库正在push的分支上（如果当时不在push的分支，就没有问题）, 那么push后的结果不会反应在work tree上,  也即在远程仓库的目录下对应的文件还是之前的内容，必须得使用git reset --hard才能看到push后的内容.
+
 然后分别创建git.exe git-receive-pack.exe git-upload-pack.exe git-upload-archive.exe 的符号链接到copssh安装目录的/bin文件夹下，问题解决！
 
 我的服务器环境为windows server 2008
