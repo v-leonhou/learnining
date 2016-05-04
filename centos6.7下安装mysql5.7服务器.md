@@ -15,3 +15,7 @@ mysql-community-embedded-5.7.12-1.el5.x86_64.rpm
 mysql-community-embedded-devel-5.7.12-1.el5.x86_64.rpm
 mysql-community-libs-compat-5.7.12-1.el5.x86_64.rpm
 
+
+
+参考文章：http://www.cnblogs.com/weiok/p/5373270.html
+
