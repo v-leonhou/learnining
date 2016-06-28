@@ -7,3 +7,5 @@ ctr + b 向左移动光标
 ctr + s 锁屏
 ctr + q 恢复锁屏
 ctr + l 清屏
+
+netstat ps top
