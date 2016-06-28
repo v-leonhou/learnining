@@ -1,0 +1,2 @@
+tar -xvf yourfile.tar   解压tar文件
+tar -C /myfolder -zxvf yourfile.tar.gz   -c指定解压目录 可以不要
