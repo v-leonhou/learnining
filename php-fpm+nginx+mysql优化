@@ -1,0 +1,3 @@
+1. php-fpm报错信息如下：
+WARNING: [pool www] server reached pm.max_children setting (5), consider raising it
+该条信息提示需要增加max_children大小
