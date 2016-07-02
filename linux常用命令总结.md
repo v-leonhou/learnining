@@ -11,7 +11,7 @@
 
 ps aux 与 ps -ef 两者都是查看系统所有运行的进程信息
 
-ps aux(BSD风格） ps -ef(System V风格）
+ps aux(`BSD风格`） ps -ef(`System V风格`）
 
 ### ps -ef
 
