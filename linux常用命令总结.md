@@ -1,24 +1,34 @@
 ## 终端命令操作快捷键
-  
-  ctr + d 删除右边字符
-  ctr + h 删除左边字符
-  ctr + f 向右移动光标
-  ctr + b 向左移动光标
-  ctr + s 锁屏
-  ctr + q 恢复锁屏
-  ctr + l 清屏
+ctr + d 删除右边字符
+
+ctr + h 删除左边字符
+
+ctr + f 向右移动光标
+
+ctr + b 向左移动光标
+
+ctr + s 锁屏
+
+ctr + q 恢复锁屏
+
+ctr + l 清屏
 
 ## netstat ps top
 
 ps aux 与 ps -ef 两者都是查看系统所有运行的进程信息
+
 ps aux(BSD风格） ps -ef(System V风格）
 
 ps -ef
 
   UID     //用户ID、但输出的是用户名
+  
   PID     //进程的ID
+  
   PPID    //父进程ID
+  
   C       //进程占用CPU的百分比
+  
   STIME   //进程启动到现在的时间
   TTY     //该进程在那个终端上运行，若与终端无关，则显示? 若为pts/0等，则表示由网络连接主机进程。
   CMD     //命令的名称和参数
