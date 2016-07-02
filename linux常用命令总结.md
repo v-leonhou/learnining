@@ -1,14 +1,14 @@
-终端命令操作快捷键
-ctr + d 删除右边字符
-ctr + h 删除左边字符
-ctr + f 向右移动光标
-ctr + b 向左移动光标
+## 终端命令操作快捷键
+  
+  ctr + d 删除右边字符
+  ctr + h 删除左边字符
+  ctr + f 向右移动光标
+  ctr + b 向左移动光标
+  ctr + s 锁屏
+  ctr + q 恢复锁屏
+  ctr + l 清屏
 
-ctr + s 锁屏
-ctr + q 恢复锁屏
-ctr + l 清屏
-
-netstat ps top
+## netstat ps top
 
 ps aux 与 ps -ef 两者都是查看系统所有运行的进程信息
 ps aux(BSD风格） ps -ef(System V风格）
