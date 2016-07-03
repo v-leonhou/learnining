@@ -78,7 +78,7 @@ ps aux(`BSD风格`） ps -ef(`System V风格`）
 被init收养，问题就比较严重了。杀死init进程意味着关闭系统。
 ```
 
-## top
+## top(摘抄自http://www.epooll.com/archives/828/）
 ```
 运行top后，按1可以看见每个CPU上的繁忙情况以及IOWAIT。
 
