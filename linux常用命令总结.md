@@ -3,7 +3,7 @@
 * [终端命令操作快捷键](#终端命令操作快捷键)
 * netstat 
 * [ps](#ps) 
-* top 
+* [top](#top) 
 * [kill](#kill)
 
 ## 终端命令操作快捷键
@@ -78,3 +78,19 @@ ps aux(`BSD风格`） ps -ef(`System V风格`）
 被init收养，问题就比较严重了。杀死init进程意味着关闭系统。
 ```
 
+## top
+```
+运行top后，按1可以看见每个CPU上的繁忙情况以及IOWAIT。
+
+可是，我希望看到，到底哪个进程在哪个CPU上执行，到底是哪个进程导致IOWAIT很高。
+
+认真看man top，终于找到方法：
+
+执行top后，按f，按j，然后按空格退出，这样就出现一列#C，可以看见当前进程正在哪个CPU上执行了。
+
+按W(大写的W)，将top的配置写入配置文件，下次打开top的时候就能看见同样的配置了。
+
+查看php进程运行在那个cpu上面
+
+ps -eo pid,args:50,psr|grep worker.php
+```
