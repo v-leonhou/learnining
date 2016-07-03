@@ -42,3 +42,9 @@
 ### vi与shell切换
 * :shell 可以在不关闭vi的情况下切换到shell命令行
 * :exit 从shell回到vi
+
+### 翻页
+* ctrl+f          向前翻页  
+* ctrl+b          向后翻页  
+* ctrl+d          向前翻半页  
+* ctrl+u          向后翻半页  
