@@ -2,14 +2,18 @@
 
 * du
 * df
-* mount 
+* [mount](#mount) 
 * fdisk
 * [设置开机自动挂载/etc/fstab文件配置](#设置开机自动挂载/etc/fstab文件配置)
 
   du -sh /*   查看某个目录下文件大小
   df -Th      查看系统磁盘使用量
 
-设置开机自动挂载/etc/fstab文件详解
+### mount
+  mount -a 自动挂载，这里是根据/etc/fstab文件的内容来挂载
+  mount /dev/hdb /home/ 手动挂载，机器重启后就得需要重新挂载
+
+### 设置开机自动挂载/etc/fstab文件详解
 
 总共6列
 
