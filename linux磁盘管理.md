@@ -22,6 +22,13 @@
 
 ### 设置开机自动挂载/etc/fstab文件详解
 
+UUID=‘分区的id号’   /usr/local exit4   default  0  0
+
+获取分区的id号[参考](http://my.oschina.net/leejun2005/blog/290073)
+* 方法一：ls -l /dev/disk/by-uuid
+* 方法二：vol_id /dev/sdb5
+* 方法三：blkid /dev/sdb5
+ 
 总共6列
 
 1. 需要挂载的系统设备
