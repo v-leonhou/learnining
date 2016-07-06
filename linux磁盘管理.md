@@ -3,7 +3,7 @@
 * du
 * df
 * [mount](#mount) 
-* fdisk
+* [fdisk](#fdisk)
 * [设置开机自动挂载/etc/fstab文件配置](#设置开机自动挂载/etc/fstab文件配置)
 
   du -sh /*   查看某个目录下文件大小
@@ -27,3 +27,20 @@
   defaults:rw,suid,dev,exec,auto,nouser,and async
 5. dump选项，设置是否让备份程序dump备份文件系统,0忽略，1备份
 6. fask选项，告诉fsck程序以什么顺序检查文件系统，0忽略
+
+### fdisk
+
+* fdisk /dev/vdb  //给数据盘/dev/vdb创建分区
+
+fdisk 参数介绍：
+| 参数 | 详解 |
+| :------: | :------: |
+| n | 新建一个分区 |
+| p | 设置为主分区 |
+| e | 扩展分区 |
+| p | 查看一下分区 |
+| w | 保存分区 |
+
+分区之后得格式化之后才可以挂载
+ 
+mkfs.ext4 /dev/hdd1
