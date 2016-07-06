@@ -3,11 +3,18 @@
 * du
 * df
 * [mount](#mount) 
+* [umount](#umount)
 * [fdisk](#fdisk)
 * [设置开机自动挂载/etc/fstab文件配置](#设置开机自动挂载/etc/fstab文件配置)
 
   du -sh /*   查看某个目录下文件大小
   df -Th      查看系统磁盘使用量
+
+### umount
+
+  umount /disk1
+  
+  umount /data   //卸载分区
 
 ### mount
   mount -a 自动挂载，这里是根据/etc/fstab文件的内容来挂载
