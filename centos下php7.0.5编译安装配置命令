@@ -1,7 +1,31 @@
 ./configure --prefix=/usr/local/php7 --enable-shmop --enable-wddx --enable-zip --enable-sockets --enable-fpm --with-fpm-user=www --with-fpm-group=www --enable-phpdbg --enable-phpdbg-debug --enable-debug --with-config-file-path=/usr/local/php7/etc --with-bz2 --with-gd --with-jpeg-dir=/usr/local --enable-intl --with-imap=/usr/local --with-imap-ssl=/usr/local --with-gettext=/usr/local --with-zlib-dir=/usr/local --with-png-dir=/usr/local --with-freetype-dir=/usr/local --enable-gd-native-ttf --with-iconv-dir=/usr/local --enable-exif --enable-mbstring --enable-calendar --with-gettext --with-libxml-dir=/usr/local --with-kerberos --with-openssl --with-zlib --with-pcre-dir --with-pdo-mysql=mysqlnd --with-mysqli=mysqlnd --enable-dom --enable-xml --with-libdir=lib64 --enable-bcmath --enable-ftp --with-pear=/usr/local/php7/lib/php --enable-mysqlnd
 
 
+centos6.5：
+1.configure: error: xml2-config not found. Please check your libxml2 installation.
+解决办法:
+  yum install libxml2 libxml2-devel -y
 
+2.configure: error: Please reinstall the BZip2 distribution
+解决办法:
+  yum install bzip2-devel
+  
+3.configure: error: jpeglib.h not found
+解决办法:
+ yum install libjpeg-devel -y
+ 
+4.configure: error: png.h not found.
+解决办法:
+ yum install libpng-devel -y
+ 
+5.configure: error: freetype-config not found.
+解决办法:
+ yum install  freetype-devel
 
-
-
+6.configure: error: utf8_mime2text() has new signature, but U8T_CANONICAL is missing. This should not happen. Check config.log for additional information.
+解决办法：
+ yum -y install libc-client-devel
+ 
+7.configure: error: Unable to detect ICU prefix or no failed. Please verify ICU install prefix and make sure icu-config works.
+解决办法：
+ yum install -y icu libicu libicu-devel
