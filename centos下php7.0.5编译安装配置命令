@@ -29,3 +29,9 @@ centos6.5：
 7.configure: error: Unable to detect ICU prefix or no failed. Please verify ICU install prefix and make sure icu-config works.
 解决办法：
  yum install -y icu libicu libicu-devel
+ 
+ 8. Ubuntu编译安装Php执行配置时，出现：
+   configure: error: Please reinstall the libcurl distribution -
+       easy.h should be in <curl-dir>/include/curl/
+ 解决办法：
+ sudo apt-get install libcurl4-gnutls-dev
