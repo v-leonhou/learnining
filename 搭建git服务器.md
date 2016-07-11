@@ -31,3 +31,11 @@ http://blog.csdn.net/marcus_x/article/details/11709461
 copssh control panel v2.4.0
 
 git Git-2.8.1-64-bit
+
+
+## linux搭建git服务器
+
+可能出现的错误:
+1. git-upload-pack: command not found
+解决办法:
+将git-upload-pack 移到/usr/bin目录下
