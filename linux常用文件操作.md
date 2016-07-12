@@ -21,6 +21,12 @@ j: This will decompress a bzip2 file.
 apt-get instlal dtrx
 
 ## 文件查找
-* whereis
-* locate (updatedb)
 * find
+* locate (updatedb)
+* whereis
+
+### find
+
+使用示例:find /指定目录 (-not) -type (d | f) -exec ls -l {} \;
+
+1. find /etc/ -type f -exec vi {} \;
