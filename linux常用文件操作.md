@@ -1,3 +1,4 @@
+## 压缩与解压缩
 1.后缀为.tar.gz (or .tgz)
 
 tar -xvf yourfile.tar   解压tar文件
@@ -18,3 +19,8 @@ j: This will decompress a bzip2 file.
 3.通用的命令工具：dtrx(do the right extration)
 
 apt-get instlal dtrx
+
+## 文件查找
+* whereis
+* locate (updatedb)
+* find
