@@ -84,4 +84,5 @@
 * set fileencoding=utf-8  //vi当前编辑的文件的字符编码方式，保存时也是保存为这种字符编码
 * set temencoding=utf-8
 * set encoding=utf-8
+
 [参考](http://www.cnblogs.com/joeyupdo/archive/2013/03/03/2941737.html)
