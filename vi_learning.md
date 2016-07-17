@@ -75,3 +75,7 @@
    * n== 自动缩进n行
    * gg=G 整篇缩进
 
+### 解决一个中文乱码问题
+* set fileencoding=utf-8   //
+* set temencoding=utf-8
+* set encoding=utf-8
