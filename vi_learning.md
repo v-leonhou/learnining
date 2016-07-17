@@ -1,3 +1,7 @@
+## 编译安装vi
+
+加参数 --enable-multibyte 让vi支持多字符编码
+
 ## vi多文档编辑
 
 ### 横向切割窗口
@@ -76,6 +80,8 @@
    * gg=G 整篇缩进
 
 ### 解决一个中文乱码问题
-* set fileencoding=utf-8   //
+* set fileencodings=utf-8  //vi启动时会按照此选项列出的字符编码方式逐一探测打开文件的字符编码，并将fileencoding设置为探测值
+* set fileencoding=utf-8  //vi当前编辑的文件的字符编码方式，保存时也是保存为这种字符编码
 * set temencoding=utf-8
 * set encoding=utf-8
+[参考](http://www.cnblogs.com/joeyupdo/archive/2013/03/03/2941737.html)
