@@ -29,6 +29,13 @@ rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
 
 geoip-devel终于安装成功！
 
+执行configure后还是报错`configure: error: *** Missing development libraries for ncursesw`
+
+于是:
+```
+yum install ncurses*
+```
+
 然后继续执行`make && make instal` ,goaccess安装成功！
 
 make过程中出现了几个警告信息：
