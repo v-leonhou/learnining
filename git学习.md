@@ -6,4 +6,4 @@
 #### git忽略vi产生的.swp 或者.swo文件      在gitignore中添加*.swp
 
 #### 配置git status diff 颜色显示
-git config --global color.[diff | status | interactive] auto
+`git config --global color.[diff | status | interactive] auto`
