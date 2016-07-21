@@ -1,0 +1,9 @@
+
+#### 删除远程分支：git push origin --delete serverfix
+
+#### 修改了ssh默认端口后git连接远程仓库=》修改~/.ssh/config文件
+
+#### git忽略vi产生的.swp 或者.swo文件      在gitignore中添加*.swp
+
+#### 配置git status diff 颜色显示
+git config --global color.[diff | status | interactive] auto
