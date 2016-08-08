@@ -15,3 +15,10 @@ soap调用是之前写的，代码已经运行一段时间，之前也偶尔出�
 
 
 ....被这个问题折腾了一天了，刚才重启了下php-fpm问题竟然解决！！！！！！！
+
+#### 在重启php-fpm后过了一天我再检查服务器发现同样的问题又出现了，难道真是php-fpm的问题么？今天重新Google了一下，在zend论坛上发现了这样
+
+一个帖子(http://forums.zend.com/viewtopic.php?f=8&t=116708)，我的问题应该属于后者，所以我按照贴子的说明在调用_soapclient客户端之前先调用
+
+了函数`libxml_disable_entity_loader(false);`
+
