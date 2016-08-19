@@ -26,6 +26,10 @@
 * :res(ize)+num 把当前窗口高度增加num行
 * :res(ize)-num 把当前窗口高度减少num行
 
+### 全局搜索，查找，替换
+
+[参考](http://codezye.com/2015/11/01/vim%E9%A1%B9%E7%9B%AE%E5%85%A8%E5%B1%80%E6%90%9C%E7%B4%A2%E7%9A%84%E6%96%B9%E6%B3%95%E6%AF%94%E8%BE%83/)
+
 ### 窗口横向调整
 * :vertical res(ize) num 指定当前窗口为num列
 * :vertical res(ize)+num 把当前窗口增加num列
