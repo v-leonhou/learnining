@@ -10,7 +10,7 @@
 
 通过ssh登陆服务器的时候会出现各种错误，最近在我的vps上面开启免密码登陆的过程中还是踩了不少坑
 
-1. `Authentication refused: bad ownership or modes for directory`
+1. Authentication refused: bad ownership or modes for directory
 
 此处错误为目录权限不正确,当前用户目录权限必须设置为550
 
