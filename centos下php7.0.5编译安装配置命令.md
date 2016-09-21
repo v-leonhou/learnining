@@ -43,3 +43,5 @@ centos6.5：
  yum install openssl openssl-devel
  
  10. pecl安装event失败 checking for include/event2/event.h... not found
+ 解决办法：
+ 手动[下载](https://github.com/expressif/pecl-event-libevent)event源码编译
