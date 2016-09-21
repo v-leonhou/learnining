@@ -41,3 +41,5 @@ centos6.5：
  解决办法：
  sudo 
  yum install openssl openssl-devel
+ 
+ 10. pecl安装event失败 checking for include/event2/event.h... not found
