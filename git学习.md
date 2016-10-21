@@ -31,3 +31,7 @@
 
 #### 配置git status diff 颜色显示
 `git config --global color.[diff | status | interactive] auto`
+
+#### git status中文文件名乱码
+`git config --global core.quotepath false`
+
