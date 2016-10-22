@@ -9,6 +9,8 @@ centos6.5：
 2.configure: error: Please reinstall the BZip2 distribution
 解决办法:
   yum install bzip2-devel
+  apt-get install libbz2-dev
+
   
 3.configure: error: jpeglib.h not found
 解决办法:
