@@ -15,14 +15,17 @@ centos6.5：
 3.configure: error: jpeglib.h not found
 解决办法:
  yum install libjpeg-devel -y
+ apt-get install libjpeg-dev
  
 4.configure: error: png.h not found.
 解决办法:
  yum install libpng-devel -y
+ apt-get install libpng-dev
  
 5.configure: error: freetype-config not found.
 解决办法:
  yum install  freetype-devel
+ apt-get install freetype6-dev
 
 6.configure: error: utf8_mime2text() has new signature, but U8T_CANONICAL is missing. This should not happen. Check config.log for additional information.
 解决办法：
