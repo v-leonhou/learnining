@@ -129,3 +129,17 @@ cclose                                   关闭qucikfix
 解决办法:
 :syntax sync fromstart
 追根溯源查看帮助说明:help syn-sync 
+
+#### 从vim7.4升级到8.0.86
+ubuntu环境
+https://github.com/vim/vim下载vim到本地/vim/目录下./configure --prefix=/usr/local/vim  
+报错：
+```
+ no terminal library found
+checking for tgetent()... configure: error: NOT FOUND!
+      You need to install a terminal library; for example ncurses.
+      Or specify the name of the library with --with-tlib.
+ ```
+ 解决办法:
+ apt-get install ncurses-dev
+重新编译即可
