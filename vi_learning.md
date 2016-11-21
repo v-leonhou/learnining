@@ -143,3 +143,7 @@ checking for tgetent()... configure: error: NOT FOUND!
  解决办法:
  apt-get install ncurses-dev
 重新编译即可
+
+安装ctags
+sudo apt-get install exuberant-ctags
+
