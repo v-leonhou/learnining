@@ -150,3 +150,5 @@ sudo apt-get install exuberant-ctags
 vi适用小技巧每次
 每次从系统剪贴板粘贴代码到vim中总是会看到代码缩进是乱的，于是分享个小技巧
 在normal模式下1 :gg   2:=G
+格式化全文： gg=G
+自动缩进当前行： ==
