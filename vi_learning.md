@@ -134,7 +134,7 @@ cclose                                   关闭qucikfix
 ubuntu环境
 https://github.com/vim/vim下载vim到本地/vim/目录下./configure --prefix=/usr/local/vim  
 报错：
-```
+ ```
  no terminal library found
 checking for tgetent()... configure: error: NOT FOUND!
       You need to install a terminal library; for example ncurses.
@@ -143,3 +143,15 @@ checking for tgetent()... configure: error: NOT FOUND!
  解决办法:
  apt-get install ncurses-dev
 重新编译即可
+
+
+#### vim E492: Not an editor command: ^M
+Mac OS的本质是unix，而*nix的文件换行符为\n，但windows却非要把\r\n作为换行符
+解决办法:
+:%s/^M//gc         g是全局 c是每次替换都确认
+这里^M为C-V C-M组合键 
+设置文件格式为unix格式
+set fileformat=unix
+
+
+
