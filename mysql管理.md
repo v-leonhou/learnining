@@ -68,3 +68,4 @@ OPTION选项导致后来该用户不能使用GRANT命令创建用户或者给其
 * 修改密码用set password命令: mysql> SET PASSWORD FOR 'root'@'localhost' = PASSWORD('123456');
 * 修改密码用mysqladmin: [root@rhel5 ~]# mysqladmin -uroot -p123456 password 1234abcd
 * 在丢失root密码的时候： [root@rhel5 ~]# mysqld_safe --skip-grant-tables &
+* 关闭,开启，重启mysql服务 /etc/init.d/mysqld start | stop | restart
