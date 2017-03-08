@@ -55,7 +55,7 @@ ps aux(`BSD风格`） ps -ef(`System V风格`）
 * W      //进入内存交换 （从内核2.6开始无效）；
 * X      //死掉的进程 （基本很少见）；
 * Z      //僵尸进程；
-* <      //优先级高的进程
+* `<`      //优先级高的进程
 * N      //优先级较低的进程
 * L      //有些页被锁进内存；
 * s      //进程的领导者（在它之下有子进程）；
@@ -95,3 +95,120 @@ ps aux(`BSD风格`） ps -ef(`System V风格`）
 
 ps -eo pid,args:50,psr|grep worker.php
 ```
+
+## 文件操作
+
+### 压缩与解压缩
+1.后缀为.tar.gz (or .tgz)
+
+tar -xvf yourfile.tar   解压tar文件
+tar -C /myfolder -zxvf yourfile.tar.gz   -c指定解压目录 可以不要
+
+说明： -z解压缩uncompress 
+       -f给文件命名
+       -v（verbose) 递归的提取文件
+       -x 告诉tar 提取文件
+       -C /dir 说明提取后文件存放目录
+
+2.后缀为.tar.bz2 (or .tbz)
+  
+tar xvjf file.tar.tbz
+
+j: This will decompress a bzip2 file.  
+
+3.通用的命令工具：dtrx(do the right extration)
+
+apt-get instlal dtrx
+
+## 文件查找
+* find
+* locate (updatedb)
+* whereis
+
+### find
+
+使用示例:find /指定目录 (-not) -type (d | f) -exec ls -l {} \;
+
+1. find /etc/ -type f -exec vi {} \;
+
+
+## 时间
+
+今天修改了linux操作系统时区为亚洲/上海时区，然后就发现php date()函数输出时间不对，由之前的上海时区时间变成了不知道是什么时区的
+时间，没有来得及记录，由此产生了php默认时区的加载问题
+
+1.tzselect设置时区
+
+2.cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+然后执行date就会发现时区已经修改
+
+
+自动同步时间： 
+ntpdate 0.pool.ntp.org | time.windows.com 
+
+(参考)[https://www.chenyudong.com/archives/linux-ntpdate-time-synchronize.html]
+
+
+## linux磁盘管理
+
+* du
+* df
+* [mount](#mount) 
+* [umount](#umount)
+* [fdisk](#fdisk)
+* [设置开机自动挂载/etc/fstab文件配置](#设置开机自动挂载/etc/fstab文件配置)
+
+  du -sh /*   查看某个目录下文件大小
+  df -Th      查看系统磁盘使用量
+
+### umount
+
+  umount /disk1
+  
+  umount /data   //卸载分区
+
+### mount
+  mount -a 自动挂载，这里是根据/etc/fstab文件的内容来挂载
+  mount /dev/hdb /home/ 手动挂载，机器重启后就得需要重新挂载
+
+### 设置开机自动挂载/etc/fstab文件详解
+
+UUID=‘分区的id号’   /usr/local exit4   default  0  0
+
+获取分区的id号[参考](http://my.oschina.net/leejun2005/blog/290073)
+* 方法一：ls -l /dev/disk/by-uuid
+* 方法二：vol_id /dev/sdb5
+* 方法三：blkid /dev/sdb5
+ 
+总共6列
+
+1. 需要挂载的系统设备
+2. 挂载点
+3. 指定文件系统或者分区的类型
+4. 挂载选项
+  auto:系统自动挂载，fstab默认就是这个
+  ro:read-only
+  rw:read-write
+  defaults:rw,suid,dev,exec,auto,nouser,and async
+5. dump选项，设置是否让备份程序dump备份文件系统,0忽略，1备份
+6. fask选项，告诉fsck程序以什么顺序检查文件系统，0忽略
+
+### fdisk
+
+* fdisk /dev/vdb  //给数据盘/dev/vdb创建分区
+
+fdisk 参数介绍：
+
+| 参数 | 详解 |
+| :------: | :------: |
+| n | 新建一个分区 |
+| p | 设置为主分区 |
+| e | 扩展分区 |
+| p | 查看一下分区 |
+| w | 保存分区 |
+
+分区之后得格式化之后才可以挂载
+ 
+mkfs.ext4 /dev/hdd1
+

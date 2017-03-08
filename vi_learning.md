@@ -29,26 +29,26 @@
 ### 全局搜索，查找，替换
 
 * :vimgrep /findme/ **/*.*         //第二个参数为要查找的字符串，最后为查找的路径 
-```
-vimgrep /匹配模式/[g][j] 要搜索的文件/范围 
-g：表示是否把每一行的多个匹配结果都加入
-j：表示是否搜索完后定位到第一个匹配位置
-vimgrep /pattern/ %           在当前打开文件中查找
-vimgrep /pattern/ *             在当前目录下查找所有
-vimgrep /pattern/ **            在当前目录及子目录下查找所有
-vimgrep /pattern/ *.c          查找当前目录下所有.c文件
-vimgrep /pattern/ **/*         只查找子目录
+    ```
+    vimgrep /匹配模式/[g][j] 要搜索的文件/范围 
+    g：表示是否把每一行的多个匹配结果都加入
+    j：表示是否搜索完后定位到第一个匹配位置
+    vimgrep /pattern/ %           在当前打开文件中查找
+    vimgrep /pattern/ *             在当前目录下查找所有
+    vimgrep /pattern/ **            在当前目录及子目录下查找所有
+    vimgrep /pattern/ *.c          查找当前目录下所有.c文件
+    vimgrep /pattern/ **/*         只查找子目录
 
-cn                                          查找下一个
-cp                                          查找上一个
-copen                                    打开quickfix
-cw                                          打开quickfix
-cclose                                   关闭qucikfix
-```
+    cn                                          查找下一个
+    cp                                          查找上一个
+    copen                                    打开quickfix
+    cw                                          打开quickfix
+    cclose                                   关闭qucikfix
+    ```
 * 插件easygrep
 * ack.vim（针对大型的项目下easygrep太慢的问题）
 
-[参考](http://codezye.com/2015/11/01/vim%E9%A1%B9%E7%9B%AE%E5%85%A8%E5%B1%80%E6%90%9C%E7%B4%A2%E7%9A%84%E6%96%B9%E6%B3%95%E6%AF%94%E8%BE%83/)
+    [参考](http://codezye.com/2015/11/01/vim%E9%A1%B9%E7%9B%AE%E5%85%A8%E5%B1%80%E6%90%9C%E7%B4%A2%E7%9A%84%E6%96%B9%E6%B3%95%E6%AF%94%E8%BE%83/)
 
 ### 窗口横向调整
 * :vertical res(ize) num 指定当前窗口为num列
@@ -87,7 +87,7 @@ cclose                                   关闭qucikfix
     2. 'i' ignore,忽略大小写
     3. 'g' global 不询问，整行替换，如果不加g选项，则只替换每行第一个匹配的字符
     4. 'e' error 不显示错误
-  
+
 
 ### 删除所有空白行
 * :g/^$/d  
@@ -97,14 +97,14 @@ cclose                                   关闭qucikfix
 * / //向下查找
 
 ### 多行缩进
-* v选择多行然后>或者<
-* n>> 或者n<<    //n行缩进  
+* v选择多行然后'>'或者'<'
+* n'>>' 或者n'<<'    //n行缩进  
 * .          //重复上一个命令
 * 自动缩进
    * == 自动缩进
    * n== 自动缩进n行
    * gg=G 整篇缩进
-   
+
 
 ### 解决一个中文乱码问题
 * set fileencodings=utf-8  //vi启动时会按照此选项列出的字符编码方式逐一探测打开文件的字符编码，并将fileencoding设置为探测值
@@ -112,7 +112,7 @@ cclose                                   关闭qucikfix
 * set temencoding=utf-8
 * set encoding=utf-8
 
-[参考](http://www.cnblogs.com/joeyupdo/archive/2013/03/03/2941737.html)
+    [参考](http://www.cnblogs.com/joeyupdo/archive/2013/03/03/2941737.html)
 
 ### 编辑命令
 * s  //删除光标所在的一个字符, 光标还在当行
@@ -134,14 +134,14 @@ cclose                                   关闭qucikfix
 ubuntu环境
 https://github.com/vim/vim下载vim到本地/vim/目录下./configure --prefix=/usr/local/vim  
 报错：
- ```
- no terminal library found
+```
+no terminal library found
 checking for tgetent()... configure: error: NOT FOUND!
-      You need to install a terminal library; for example ncurses.
-      Or specify the name of the library with --with-tlib.
- ```
- 解决办法:
- apt-get install ncurses-dev
+You need to install a terminal library; for example ncurses.
+Or specify the name of the library with --with-tlib.
+```
+解决办法:
+apt-get install ncurses-dev
 重新编译即可
 
 
@@ -163,3 +163,34 @@ vi适用小技巧每次
 在normal模式下1 :gg   2:=G
 格式化全文： gg=G
 自动缩进当前行： ==
+
+
+今天在vi上使用默认用户登陆系统，在终端上用su切换到root用户后打开vi报错：
+```
+(gksu:2256): GConf-WARNING **: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+GConf 错误：D-BUS 守护进程没有运行
+```
+
+解决办法：
+
+应该是shell执行环境不对造成dbus没有启动，执行sudo -s -H完美解决
+
+
+
+vimscript 
+
+字符串不能使用+连接，+只用于数字，当用+连接字符串时，会强制将字符串转为开头的数字再相加。正确的连接符号为.
+
+布尔设置开关
+
+所有布尔设置都是通过:set <name>来开启，通过:set no<name>来关闭
+
+也可以用toggle来设置自动开或关，:set <name>!
+
+检查某个布尔设置的开关情况可以使用 :set <name>?，比如查看是否显示行号用:set number?，如果是显示行号则显示number，不显示行号显示为nonumber
+
+特别笔记下:set shiftround命令，其作用是在你按>或<或者是在插入模式下按C-T或C-D时的缩进取整对齐， 比如我设置了:set shiftwidth=4，然后有如下缩进不规则的文本：
+
+:::text
+

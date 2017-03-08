@@ -1,7 +1,3 @@
-#### 1. php-fpm报错信息如下：
-WARNING: [pool www] server reached pm.max_children setting (5), consider raising it
-该条信息提示需要增加max_children大小
-
 #### nginx设置把所有的.php文件都穿给php解析器解析，但是这种方式存在严重的安全隐患
 ```
 location ~* \.php$ {
@@ -48,3 +44,18 @@ location ~* \.php$ {
 ```
 
 [官网参考](https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/)
+
+
+### php-fpm进程控制信号
+* SIGTERM,SIGINT 立即终止进程
+* SIGQUIT 平滑终止进程,从容关闭
+* SIGUSR1 重新打开日志文件
+* SIGUSR2 平滑重载所有worker进程并重新载入配置和二进制模块
+
+    ```
+        重载php-fpm
+        kill -SIGUSR2 `cat /var/run/php-fpm.pid`
+    ```
+
+
+

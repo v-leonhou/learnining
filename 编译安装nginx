@@ -47,3 +47,73 @@ centos  yum -y install pcre-devel openssl openssl-devel
 
 ./configure --prefix=/usr/local/nginx --sbin-path=/usr/local/nginx/sbin/nginx --conf-path=/usr/local/nginx/conf/nginx.conf --error-log-path=/var/log/nginx/error.log --http-log-path=/var/log/nginx/access.log --pid-path=/var/run/nginx.pid --lock-path=/var/run/nginx.lock --http-client-body-temp-path=/var/cache/nginx/client_temp --http-proxy-temp-path=/var/cache/nginx/proxy_temp --http-fastcgi-temp-path=/var/cache/nginx/fastcgi_temp --http-uwsgi-temp-path=/var/cache/nginx/uwsgi_temp --http-scgi-temp-path=/var/cache/nginx/scgi_temp --user=nginx --group=nginx --with-http_ssl_module --with-http_realip_module --with-http_addition_module --with-http_sub_module --with-http_dav_module --with-http_flv_module --with-http_mp4_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_random_index_module --with-http_secure_link_module --with-http_stub_status_module --with-http_auth_request_module --with-threads --with-stream --with-stream_ssl_module --with-http_slice_module --with-mail --with-mail_ssl_module --with-file-aio --with-http_v2_module --with-ipv6
 
+nginx配置
+
+rewrite规则
+```
+server {
+    listen 80;
+    root /path/to/dilicms/;
+    index index.php;
+    server_name love.dilicms.com;
+
+    location ~ ^(/(application|system|services|shared|admin/backup|admin/config|admin/controllers|admin/core|amdin/errors|admin/hooks|admin/language))/ {
+        deny all;
+    }
+
+    location / {
+
+        if ($request_uri ~* index/?$)
+        {
+            rewrite ^/(.*)/index/?$ /$1 permanent;
+        }
+
+        if (!-d $request_filename)
+        {
+            rewrite ^/(.+)/$ /$1 permanent;
+        }
+
+        set $admin '';
+
+        if ($request_uri ~* ^/admin/) {
+            set $admin A;
+        }
+
+        if ($request_uri ~* ^/install/) {
+            set $admin B;
+        }
+
+        if (!-e $request_filename) {
+            set $admin "X${admin}";
+        }
+
+        if ($admin = XA) {
+            rewrite ^/admin/(.*)$ /admin/index.php?/$1 last;
+            break;
+        }
+
+        if ($admin = XB) {
+            rewrite ^/install/public/(.*)$ /install/public/index.php?/$1 last;
+        }
+
+        if ($admin = X) {
+            rewrite ^/(.*)$ /index.php?/$1 last;
+            break;
+        }
+
+    }
+
+
+    location ~ \.php$ {
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME /path/to/dilicms$fastcgi_script_name;
+        include fastcgi_params;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+}
+
+```
