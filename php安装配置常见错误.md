@@ -4,7 +4,7 @@
 ```
 
 1. configure: error: xml2-config not found. Please check your libxml2 installation.
-  解决办法:
+ M 解决办法:
   yum install libxml2 libxml2-devel -y
 
 2. configure: error: Please reinstall the BZip2 distribution
