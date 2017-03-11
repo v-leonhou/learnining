@@ -54,3 +54,7 @@ centos6.5：
  11.mcrypt.h not found
  yum install libmcrypt libmcrypt-devel
  
+ 12. configure: error: bison is required to build PHP/Zend when building a GIT checkout!
+ sudo apt-get install bison
+ 
+ 13. configure: WARNING: You will need re2c 0.13.4 or later if you want to regenerate PHP parsers
