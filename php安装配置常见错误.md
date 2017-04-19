@@ -25,7 +25,7 @@
 5. configure: error: freetype-config not found.
  解决办法:
  yum install  freetype-devel
- apt-get install freetype6-dev
+ apt-get install libfreetype6-dev
 
 6. configure: error: utf8_mime2text() has new signature, but U8T_CANONICAL is missing. This should not happen. Check config.log for additional information.
  解决办法：
