@@ -12,8 +12,10 @@
 #define HASH_SUCCESS            0
 #define HASH_RESIZE_OVERFLOW    1
 
-//#define HASH_DEBUG
+#define HASH_DEBUG 1
 
+extern int a;
+extern int women();
 typedef struct _hash_bucket Bucket;
 typedef struct _hash_table  HashTable;
 
