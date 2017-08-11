@@ -22,7 +22,7 @@ typedef struct _hash_table  HashTable;
 struct _hash_bucket {
     char            *key;
     void            *val;
-    uint32_t        h;
+    uint32_t        h;                 //哈希值
     uint32_t        next;
     unsigned char   type;
 };

@@ -1,9 +1,12 @@
-all: run 
+all: 
+	gcc -g test.c hash.c -o test
 	./test
-run: 
-	gcc test.c hash.c -o test
+# run:
 m: 
-	gcc b.c -o b
+	gcc -g b.c -o b
 	./b
+k:
+	gcc -g a.c -o a
+	./a
 
 

@@ -1,7 +1,6 @@
 #include "hash.h"
 #include <stdio.h>
 
-int a = 20;
 static uint32_t _check_size(uint32_t nSize);
 static int _hash_resize(HashTable* ht);
 static uint32_t _string_hash_val(char *key);
@@ -93,7 +92,6 @@ int hash_add(HashTable* ht, char *key, void *val) /*{{{*/
     uint32_t    *arHash;
 
     h = _string_hash_val(key); //获取hash值
-    // printf("%s的哈希值为%d\n\n",key,h);
 
     if(ht->nNumUsed < ht->nTableSize){ //有可用空间
         b = hash_get(ht, key);
@@ -115,11 +113,12 @@ int hash_add(HashTable* ht, char *key, void *val) /*{{{*/
     b->type = 0;
 
     nIndex = h | ht->nTableMask;
-    printf("nIndex的值为%d\n",nIndex);
 
     arHash = ((uint32_t *)(ht)->arData) + (int32_t)nIndex;
     b->next = *arHash;
+    printf("b->next的值为%d\n",b->next);
     *arHash = idx;
+    printf("arHash的值为%d\n",*arHash);
 
     ht->nNumUsed++;
     ht->nNumOfElments++;
