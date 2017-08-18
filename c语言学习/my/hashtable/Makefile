@@ -9,4 +9,6 @@ k:
 	gcc -g a.c -o a
 	./a
 
+clean:
+	rm ./c ./test ./b
 

@@ -6,7 +6,7 @@
 int main(void)
 {
     HashTable ht;
-    hash_init(&ht, 8);
+    hash_init(&ht, 2);
 
     int a = 118;
     int b = 119;
