@@ -65,7 +65,6 @@ static uint32_t _string_hash_val(char *key) /*{{{*/
 void hash_init(HashTable* ht, uint32_t nSize) /*{{{*/
 {
     nSize = _check_size(nSize);
-    printf("nsize的值为%d\n\n",nSize);
 
     uint32_t    arDataSize, maskSize, i;
     uint32_t    *arHash;
@@ -115,7 +114,6 @@ int hash_add(HashTable* ht, char *key, void *val) /*{{{*/
     b->type = 0;
 
     nIndex = h | ht->nTableMask;
-    printf("nIndex的值为%d\n",nIndex);
 
     arHash = ((uint32_t *)(ht)->arData) + (int32_t)nIndex;
     b->next = *arHash;
