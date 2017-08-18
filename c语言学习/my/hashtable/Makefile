@@ -1,12 +1,13 @@
 all: 
-	gcc test.c hash.c -o test
+	gcc -g test.c hash.c -o test
 	./test
-b: 
-	gcc b.c -o b
+# run:
+m: 
+	gcc -g b.c -o b
 	./b
-c:
-	gcc -g c.c -o c
-	./c
+k:
+	gcc -g a.c -o a
+	./a
 
 clean:
 	rm ./c ./test ./b
