@@ -82,11 +82,20 @@ PHP_FUNCTION(confirm_test_compiled)
 // */
 /* }}} */
 
-PHP_GINIT_FUNCTION(test)
+static PHP_GINIT_FUNCTION(test)
 {
     test_globals->global_string = NULL;
     test_globals->global_value = 0;
 }
+
+//PHP_GINIT_FUNCTION 宏展开后
+// void zm_globals_ctor_test(zend_test_globals *test_globals)
+// {
+//     test_globals->global_string = NULL;
+//     test_globals->global_value = 0;
+// }
+
+
 
 /* {{{ PHP_MINIT_FUNCTION
  */
@@ -169,7 +178,7 @@ zend_module_entry test_module_entry = {
     PHP_GINIT(test),
     NULL,
     NULL,
-    STANDARD_MODULE_HEADER_EX
+    STANDARD_MODULE_PROPERTIES_EX 
 };
 /* }}} */
 
