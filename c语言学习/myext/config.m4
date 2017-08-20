@@ -7,15 +7,15 @@ dnl without editing.
 
 dnl If your extension references something external, use with:
 
-dnl PHP_ARG_WITH(test, for test support,
+dnl  PHP_ARG_WITH(test, for test support,
 dnl Make sure that the comment is aligned:
-dnl [  --with-test             Include test support])
+dnl  [  --with-test             Include test support])
 
 dnl Otherwise use enable:
 
-dnl PHP_ARG_ENABLE(test, whether to enable test support,
+PHP_ARG_ENABLE(test, whether to enable test support,
 dnl Make sure that the comment is aligned:
-dnl [  --enable-test           Enable test support])
+[  --enable-test           Enable test support])
 
 if test "$PHP_TEST" != "no"; then
   dnl Write more examples of tests here...

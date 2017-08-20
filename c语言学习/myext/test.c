@@ -27,22 +27,20 @@
 #include "ext/standard/info.h"
 #include "php_test.h"
 
-/* If you declare any globals in php_test.h uncomment this:
+// If you declare any globals in php_test.h uncomment this:
 ZEND_DECLARE_MODULE_GLOBALS(test)
-*/
+
 
 /* True global resources - no need for thread safety here */
 static int le_test;
 
 /* {{{ PHP_INI
  */
-/* Remove comments and fill if you need to have entries in php.ini
+// Remove comments and fill if you need to have entries in php.ini
 PHP_INI_BEGIN()
     STD_PHP_INI_ENTRY("test.global_value",      "42", PHP_INI_ALL, OnUpdateLong, global_value, zend_test_globals, test_globals)
     STD_PHP_INI_ENTRY("test.global_string", "foobar", PHP_INI_ALL, OnUpdateString, global_string, zend_test_globals, test_globals)
 PHP_INI_END()
-*/
-/* }}} */
 
 /* Remove the following function when you have successfully modified config.m4
    so that your module can be compiled into PHP, it exists only for testing
@@ -75,22 +73,28 @@ PHP_FUNCTION(confirm_test_compiled)
 
 /* {{{ php_test_init_globals
  */
-/* Uncomment this function if you have INI entries
-static void php_test_init_globals(zend_test_globals *test_globals)
-{
-	test_globals->global_value = 0;
-	test_globals->global_string = NULL;
-}
-*/
+// Uncomment this function if you have INI entries
+// static void php_test_init_globals(zend_test_globals *test_globals)
+// {
+//     test_globals->global_value = 0;
+//     test_globals->global_string = NULL;
+// }
+// */
 /* }}} */
+
+PHP_GINIT_FUNCTION(test)
+{
+    test_globals->global_string = NULL;
+    test_globals->global_value = 0;
+}
 
 /* {{{ PHP_MINIT_FUNCTION
  */
 PHP_MINIT_FUNCTION(test)
 {
-	/* If you have INI entries, uncomment these lines
 	REGISTER_INI_ENTRIES();
-	*/
+    REGISTER_LONG_CONSTANT("TEST",10,CONST_CS | CONST_PERSISTENT);
+    REGISTER_STRING_CONSTANT("MY","women",CONST_CS | CONST_PERSISTENT);
 	return SUCCESS;
 }
 /* }}} */
@@ -99,9 +103,7 @@ PHP_MINIT_FUNCTION(test)
  */
 PHP_MSHUTDOWN_FUNCTION(test)
 {
-	/* uncomment this line if you have INI entries
 	UNREGISTER_INI_ENTRIES();
-	*/
 	return SUCCESS;
 }
 /* }}} */
@@ -135,9 +137,9 @@ PHP_MINFO_FUNCTION(test)
 	php_info_print_table_header(2, "test support", "enabled");
 	php_info_print_table_end();
 
-	/* Remove comments if you have entries in php.ini
-	DISPLAY_INI_ENTRIES();
-	*/
+    // Remove comments if you have entries in php.ini
+    DISPLAY_INI_ENTRIES();
+	// */
 }
 /* }}} */
 
@@ -163,7 +165,11 @@ zend_module_entry test_module_entry = {
 	PHP_RSHUTDOWN(test),	/* Replace with NULL if there's nothing to do at request end */
 	PHP_MINFO(test),
 	PHP_TEST_VERSION,
-	STANDARD_MODULE_PROPERTIES
+    PHP_MODULE_GLOBALS(test),
+    PHP_GINIT(test),
+    NULL,
+    NULL,
+    STANDARD_MODULE_HEADER_EX
 };
 /* }}} */
 
