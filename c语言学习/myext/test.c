@@ -58,7 +58,6 @@ PHP_FUNCTION(confirm_test_compiled)
 	if (zend_parse_parameters(ZEND_NUM_ARGS(), "s", &arg, &arg_len) == FAILURE) {
 		return;
 	}
-
 	strg = strpprintf(0, "Congratulations! You have successfully modified ext/%.78s/config.m4. Module %.78s is now compiled into PHP.", "test", arg);
 
 	RETURN_STR(strg);
@@ -94,8 +93,6 @@ static PHP_GINIT_FUNCTION(test)
 //     test_globals->global_string = NULL;
 //     test_globals->global_value = 0;
 // }
-
-
 
 /* {{{ PHP_MINIT_FUNCTION
  */
