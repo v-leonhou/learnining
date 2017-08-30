@@ -1,0 +1,8 @@
+test.lo: /vagrant/data/linux-/c语言学习/myext/test.c
+	$(LIBTOOL) --mode=compile $(CC) -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/vagrant/data/linux-/c语言学习/myext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /vagrant/data/linux-/c语言学习/myext/test.c -o test.lo 
+$(phplibdir)/test.la: ./test.la
+	$(LIBTOOL) --mode=install cp ./test.la $(phplibdir)
+
+./test.la: $(shared_objects_test) $(TEST_SHARED_DEPENDENCIES)
+	$(LIBTOOL) --mode=link $(CC) $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS) $(LDFLAGS) -o $@ -export-dynamic -avoid-version -prefer-pic -module -rpath $(phplibdir) $(EXTRA_LDFLAGS) $(shared_objects_test) $(TEST_SHARED_LIBADD)
+
