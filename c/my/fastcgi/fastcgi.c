@@ -46,16 +46,18 @@ int main()
     }
     printf("写入数据%d\n",b);
     
-    while(1)
-    {
+    // while(1)
+    // {
        b = read(a,buf,1000);
        printf("读取数据%d\n",b);
        if( b == 0)
        {
            printf("socket返回数据%s\n",buf);
-           close(a);
-           break;
+           // break;
        }
-    }
+       printf("socket返回数据%s\n",buf);
+       close(a);
+
+    // }
     return 0;
 }
