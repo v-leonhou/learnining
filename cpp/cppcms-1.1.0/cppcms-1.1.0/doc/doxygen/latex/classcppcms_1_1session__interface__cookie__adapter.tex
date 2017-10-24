@@ -1,0 +1,61 @@
+\section{cppcms\+:\+:session\+\_\+interface\+\_\+cookie\+\_\+adapter Class Reference}
+\label{classcppcms_1_1session__interface__cookie__adapter}\index{cppcms\+::session\+\_\+interface\+\_\+cookie\+\_\+adapter@{cppcms\+::session\+\_\+interface\+\_\+cookie\+\_\+adapter}}
+
+
+{\ttfamily \#include $<$cppcms/session\+\_\+interface.\+h$>$}
+
+Inheritance diagram for cppcms\+:\+:session\+\_\+interface\+\_\+cookie\+\_\+adapter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1session__interface__cookie__adapter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf set\+\_\+cookie} ({\bf http\+::cookie} const \&updated\+\_\+cookie)=0
+\item 
+virtual std\+::string {\bf get\+\_\+session\+\_\+cookie} (std\+::string const \&name)=0
+\item 
+virtual std\+::set$<$ std\+::string $>$ {\bf get\+\_\+cookie\+\_\+names} ()=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\+PI to handle session cookies.
+
+This A\+PI allows two things\+:
+
+(a) Integration with 3rd part web technologies to access Cpp\+C\+MS session, i.\+e. using Cpp\+C\+MS session from P\+HP or Java Servlets
+
+(b) An A\+PI that allows to translate cookies session tracking system to a different method when cookies do not suite the design -\/ for example for internal R\+PC systems, etc. Note incorrect use of non-\/cookies medium may expose you to security issues
+
+\doxyref{New in Cpp\+C\+MS 1.\+2}{p.}{v1_2} 
+
+\subsection{Member Function Documentation}
+\index{cppcms\+::session\+\_\+interface\+\_\+cookie\+\_\+adapter@{cppcms\+::session\+\_\+interface\+\_\+cookie\+\_\+adapter}!get\+\_\+cookie\+\_\+names@{get\+\_\+cookie\+\_\+names}}
+\index{get\+\_\+cookie\+\_\+names@{get\+\_\+cookie\+\_\+names}!cppcms\+::session\+\_\+interface\+\_\+cookie\+\_\+adapter@{cppcms\+::session\+\_\+interface\+\_\+cookie\+\_\+adapter}}
+\subsubsection[{get\+\_\+cookie\+\_\+names()=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\+::set$<$std\+::string$>$ cppcms\+::session\+\_\+interface\+\_\+cookie\+\_\+adapter\+::get\+\_\+cookie\+\_\+names (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1session__interface__cookie__adapter_acf3f5b0d16e8c40705adbb1fffb2ec83}
+Get all cookie keys \index{cppcms\+::session\+\_\+interface\+\_\+cookie\+\_\+adapter@{cppcms\+::session\+\_\+interface\+\_\+cookie\+\_\+adapter}!get\+\_\+session\+\_\+cookie@{get\+\_\+session\+\_\+cookie}}
+\index{get\+\_\+session\+\_\+cookie@{get\+\_\+session\+\_\+cookie}!cppcms\+::session\+\_\+interface\+\_\+cookie\+\_\+adapter@{cppcms\+::session\+\_\+interface\+\_\+cookie\+\_\+adapter}}
+\subsubsection[{get\+\_\+session\+\_\+cookie(std\+::string const \&name)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\+::string cppcms\+::session\+\_\+interface\+\_\+cookie\+\_\+adapter\+::get\+\_\+session\+\_\+cookie (
+\begin{DoxyParamCaption}
+\item[{std\+::string const \&}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1session__interface__cookie__adapter_ad32c244810de3f2b3457df04d7bbfcf2}
+Get value of a cookie, it is guaranted that name is what \doxyref{session\+\_\+interface\+::session\+\_\+cookie\+\_\+name()}{p.}{classcppcms_1_1session__interface_a87c21a523fd07c9e2da7cce3245832a8} returns \index{cppcms\+::session\+\_\+interface\+\_\+cookie\+\_\+adapter@{cppcms\+::session\+\_\+interface\+\_\+cookie\+\_\+adapter}!set\+\_\+cookie@{set\+\_\+cookie}}
+\index{set\+\_\+cookie@{set\+\_\+cookie}!cppcms\+::session\+\_\+interface\+\_\+cookie\+\_\+adapter@{cppcms\+::session\+\_\+interface\+\_\+cookie\+\_\+adapter}}
+\subsubsection[{set\+\_\+cookie(http\+::cookie const \&updated\+\_\+cookie)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\+::session\+\_\+interface\+\_\+cookie\+\_\+adapter\+::set\+\_\+cookie (
+\begin{DoxyParamCaption}
+\item[{{\bf http\+::cookie} const \&}]{updated\+\_\+cookie}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1session__interface__cookie__adapter_a3aaff987e76ed88e6c44b3da8f5a7ebd}
+Set a new cookie value 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+cppcms/session\+\_\+interface.\+h\end{DoxyCompactItemize}

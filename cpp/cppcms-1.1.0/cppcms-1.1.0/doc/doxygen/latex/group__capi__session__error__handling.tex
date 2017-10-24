@@ -1,0 +1,52 @@
+\section{Error Handling}
+\label{group__capi__session__error__handling}\index{Error Handling@{Error Handling}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf C\+P\+P\+C\+M\+S\+\_\+\+C\+A\+P\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+OK}~0\label{group__capi__session__error__handling_ga68ddb6716d6d2ceda3288f999a8c285d}
+
+\begin{DoxyCompactList}\small\item\em Success. \end{DoxyCompactList}\item 
+\#define {\bf C\+P\+P\+C\+M\+S\+\_\+\+C\+A\+P\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+G\+E\+N\+E\+R\+AL}~1\label{group__capi__session__error__handling_ga97830c2a5f362eba9b54f87e835d859d}
+
+\begin{DoxyCompactList}\small\item\em Uncategorized error. \end{DoxyCompactList}\item 
+\#define {\bf C\+P\+P\+C\+M\+S\+\_\+\+C\+A\+P\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+U\+N\+T\+I\+ME}~2\label{group__capi__session__error__handling_ga60be3bd462bf3c0bd0b4305af0d7b0d1}
+
+\begin{DoxyCompactList}\small\item\em Runtime Error occured. \end{DoxyCompactList}\item 
+\#define {\bf C\+P\+P\+C\+M\+S\+\_\+\+C\+A\+P\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+R\+G\+U\+M\+E\+NT}~4\label{group__capi__session__error__handling_ga5e1316d42684d2a808dfc3b29fa0dabf}
+
+\begin{DoxyCompactList}\small\item\em Invalid Argument Provided. \end{DoxyCompactList}\item 
+\#define {\bf C\+P\+P\+C\+M\+S\+\_\+\+C\+A\+P\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+L\+O\+G\+IC}~5\label{group__capi__session__error__handling_gac39130f6a035459230547b0e815c2cc7}
+
+\begin{DoxyCompactList}\small\item\em Invalid A\+PI Use. \end{DoxyCompactList}\item 
+\#define {\bf C\+P\+P\+C\+M\+S\+\_\+\+C\+A\+P\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+L\+L\+OC}~6\label{group__capi__session__error__handling_ga40bb65ebff8f9f60f505932b4bb467d4}
+
+\begin{DoxyCompactList}\small\item\em Allocation Failed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void $\ast$ {\bf cppcms\+\_\+capi\+\_\+object}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bf cppcms\+\_\+capi\+\_\+error} ({\bf cppcms\+\_\+capi\+\_\+object} obj)\label{group__capi__session__error__handling_gaa3dadd96f7278f2adebf38a234dd9f59}
+
+\begin{DoxyCompactList}\small\item\em Get error code for the object. \end{DoxyCompactList}\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI char const $\ast$ {\bf cppcms\+\_\+capi\+\_\+error\+\_\+message} ({\bf cppcms\+\_\+capi\+\_\+object} obj)\label{group__capi__session__error__handling_ga1d0ecf59aeed3ccae3a7998ea71d8d03}
+
+\begin{DoxyCompactList}\small\item\em Get error message for the object. \end{DoxyCompactList}\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI char const $\ast$ {\bf cppcms\+\_\+capi\+\_\+error\+\_\+clear} ({\bf cppcms\+\_\+capi\+\_\+object} obj)\label{group__capi__session__error__handling_ga0f75da713caf651249da3f0c4ecb90d9}
+
+\begin{DoxyCompactList}\small\item\em Clear error and get last message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Typedef Documentation}
+\index{Error Handling@{Error Handling}!cppcms\+\_\+capi\+\_\+object@{cppcms\+\_\+capi\+\_\+object}}
+\index{cppcms\+\_\+capi\+\_\+object@{cppcms\+\_\+capi\+\_\+object}!Error Handling@{Error Handling}}
+\subsubsection[{cppcms\+\_\+capi\+\_\+object}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ {\bf cppcms\+\_\+capi\+\_\+object}}\label{group__capi__session__error__handling_ga98755159eeab676bf00261135dc307b2}
+\char`\"{}\+Base class\char`\"{} for cppcms\+\_\+capi\+\_\+session, cppcms\+\_\+capi\+\_\+session\+\_\+pool, and cppcms\+\_\+capi\+\_\+cookie
+
+Is used to get error status of the object 

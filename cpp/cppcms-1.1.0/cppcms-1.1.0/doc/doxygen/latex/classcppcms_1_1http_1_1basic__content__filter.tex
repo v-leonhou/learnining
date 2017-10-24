@@ -1,0 +1,50 @@
+\section{cppcms\+:\+:http\+:\+:basic\+\_\+content\+\_\+filter Class Reference}
+\label{classcppcms_1_1http_1_1basic__content__filter}\index{cppcms\+::http\+::basic\+\_\+content\+\_\+filter@{cppcms\+::http\+::basic\+\_\+content\+\_\+filter}}
+
+
+{\ttfamily \#include $<$cppcms/http\+\_\+content\+\_\+filter.\+h$>$}
+
+Inheritance diagram for cppcms\+:\+:http\+:\+:basic\+\_\+content\+\_\+filter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1http_1_1basic__content__filter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf on\+\_\+end\+\_\+of\+\_\+content} ()
+\item 
+virtual void {\bf on\+\_\+error} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Basic content filter that can be installed to request, all filters should be derived from this base class
+
+Note that when {\ttfamily on\+\_\+$\ast$} member functions of the \doxyref{basic\+\_\+content\+\_\+filter}{p.}{classcppcms_1_1http_1_1basic__content__filter} are called the original application that runs the filtering has temporary installed context that can be accessed from it.
+
+\doxyref{New in Cpp\+C\+MS 1.\+2}{p.}{v1_2} 
+
+\subsection{Member Function Documentation}
+\index{cppcms\+::http\+::basic\+\_\+content\+\_\+filter@{cppcms\+::http\+::basic\+\_\+content\+\_\+filter}!on\+\_\+end\+\_\+of\+\_\+content@{on\+\_\+end\+\_\+of\+\_\+content}}
+\index{on\+\_\+end\+\_\+of\+\_\+content@{on\+\_\+end\+\_\+of\+\_\+content}!cppcms\+::http\+::basic\+\_\+content\+\_\+filter@{cppcms\+::http\+::basic\+\_\+content\+\_\+filter}}
+\subsubsection[{on\+\_\+end\+\_\+of\+\_\+content()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\+::http\+::basic\+\_\+content\+\_\+filter\+::on\+\_\+end\+\_\+of\+\_\+content (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1http_1_1basic__content__filter_a77c3fbea0db525449b2d72569b21914a}
+Member function that is called when entire content is read. By default does nothing.
+
+The request can be aborted by throwing \doxyref{abort\+\_\+upload}{p.}{classcppcms_1_1http_1_1abort__upload} \index{cppcms\+::http\+::basic\+\_\+content\+\_\+filter@{cppcms\+::http\+::basic\+\_\+content\+\_\+filter}!on\+\_\+error@{on\+\_\+error}}
+\index{on\+\_\+error@{on\+\_\+error}!cppcms\+::http\+::basic\+\_\+content\+\_\+filter@{cppcms\+::http\+::basic\+\_\+content\+\_\+filter}}
+\subsubsection[{on\+\_\+error()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\+::http\+::basic\+\_\+content\+\_\+filter\+::on\+\_\+error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1http_1_1basic__content__filter_a102acda0950e880fe3dc04ae8616b205}
+Member function that is called in case of a error occuring during upload progress, user should not throw exception from this function but rather perform cleanup procedures if needed 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+cppcms/http\+\_\+content\+\_\+filter.\+h\end{DoxyCompactItemize}

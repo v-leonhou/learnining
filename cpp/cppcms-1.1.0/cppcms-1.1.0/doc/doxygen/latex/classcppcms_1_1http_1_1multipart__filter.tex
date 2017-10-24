@@ -1,0 +1,84 @@
+\section{cppcms\+:\+:http\+:\+:multipart\+\_\+filter Class Reference}
+\label{classcppcms_1_1http_1_1multipart__filter}\index{cppcms\+::http\+::multipart\+\_\+filter@{cppcms\+::http\+::multipart\+\_\+filter}}
+
+
+{\ttfamily \#include $<$cppcms/http\+\_\+content\+\_\+filter.\+h$>$}
+
+Inheritance diagram for cppcms\+:\+:http\+:\+:multipart\+\_\+filter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1http_1_1multipart__filter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf on\+\_\+new\+\_\+file} ({\bf http\+::file} \&input\+\_\+file)
+\item 
+virtual void {\bf on\+\_\+upload\+\_\+progress} ({\bf http\+::file} \&input\+\_\+file)
+\item 
+virtual void {\bf on\+\_\+data\+\_\+ready} ({\bf http\+::file} \&input\+\_\+file)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Filter for multipart/form-\/data -\/ file upload
+
+It allows to process/validate incomping data on the fly and make sure that for example the user is actually authorized to upload such a files
+
+\doxyref{New in Cpp\+C\+MS 1.\+2}{p.}{v1_2} 
+
+\subsection{Member Function Documentation}
+\index{cppcms\+::http\+::multipart\+\_\+filter@{cppcms\+::http\+::multipart\+\_\+filter}!on\+\_\+data\+\_\+ready@{on\+\_\+data\+\_\+ready}}
+\index{on\+\_\+data\+\_\+ready@{on\+\_\+data\+\_\+ready}!cppcms\+::http\+::multipart\+\_\+filter@{cppcms\+::http\+::multipart\+\_\+filter}}
+\subsubsection[{on\+\_\+data\+\_\+ready(http\+::file \&input\+\_\+file)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\+::http\+::multipart\+\_\+filter\+::on\+\_\+data\+\_\+ready (
+\begin{DoxyParamCaption}
+\item[{{\bf http\+::file} \&}]{input\+\_\+file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1http_1_1multipart__filter_a8022b0774c6fd79d8bcded63201bf27a}
+The entire file data was transfered, its size wouldn\textquotesingle{}t change
+
+Notes\+:
+
+
+\begin{DoxyItemize}
+\item This is the point when you can save file if needed or perform final validation
+\item The request can be aborted by throwing \doxyref{abort\+\_\+upload}{p.}{classcppcms_1_1http_1_1abort__upload}
+\item By default does nothing 
+\end{DoxyItemize}\index{cppcms\+::http\+::multipart\+\_\+filter@{cppcms\+::http\+::multipart\+\_\+filter}!on\+\_\+new\+\_\+file@{on\+\_\+new\+\_\+file}}
+\index{on\+\_\+new\+\_\+file@{on\+\_\+new\+\_\+file}!cppcms\+::http\+::multipart\+\_\+filter@{cppcms\+::http\+::multipart\+\_\+filter}}
+\subsubsection[{on\+\_\+new\+\_\+file(http\+::file \&input\+\_\+file)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\+::http\+::multipart\+\_\+filter\+::on\+\_\+new\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{{\bf http\+::file} \&}]{input\+\_\+file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1http_1_1multipart__filter_aea98f955007c7ee3713aa6727769c27d}
+New file meta-\/data of a form field or file is ready\+: the mime-\/type, form name and file name if provided are known, the content wasn\textquotesingle{}t processed yet
+
+Notes\+:
+
+
+\begin{DoxyItemize}
+\item This is the point when you can change various file properties, like location of the temporary file or specifiy output file name and more
+\item The request can be aborted by throwing \doxyref{abort\+\_\+upload}{p.}{classcppcms_1_1http_1_1abort__upload}
+\item By default does nothing 
+\end{DoxyItemize}\index{cppcms\+::http\+::multipart\+\_\+filter@{cppcms\+::http\+::multipart\+\_\+filter}!on\+\_\+upload\+\_\+progress@{on\+\_\+upload\+\_\+progress}}
+\index{on\+\_\+upload\+\_\+progress@{on\+\_\+upload\+\_\+progress}!cppcms\+::http\+::multipart\+\_\+filter@{cppcms\+::http\+::multipart\+\_\+filter}}
+\subsubsection[{on\+\_\+upload\+\_\+progress(http\+::file \&input\+\_\+file)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\+::http\+::multipart\+\_\+filter\+::on\+\_\+upload\+\_\+progress (
+\begin{DoxyParamCaption}
+\item[{{\bf http\+::file} \&}]{input\+\_\+file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1http_1_1multipart__filter_a83418af76b2e36d3f6b530ed2d66caba}
+Some of the file data is available, you can access it and run some validation during upload progress.
+
+Notes\+:
+
+
+\begin{DoxyItemize}
+\item This is the point when you can perform some file content validation
+\item The request can be aborted by throwing \doxyref{abort\+\_\+upload}{p.}{classcppcms_1_1http_1_1abort__upload}
+\item By default does nothing 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+cppcms/http\+\_\+content\+\_\+filter.\+h\end{DoxyCompactItemize}

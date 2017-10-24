@@ -1,0 +1,284 @@
+\section{cppcms\+:\+:plugin\+:\+:manager Class Reference}
+\label{classcppcms_1_1plugin_1_1manager}\index{cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}}
+
+
+{\ttfamily \#include $<$cppcms/plugin.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf booster\+::intrusive\+\_\+ptr}$<$ {\bf booster\+::refcounted} $>$ {\bfseries refcounted\+\_\+ptr}\label{classcppcms_1_1plugin_1_1manager_a002f66d5da6c8540bcbfc8bba53a3c5e}
+
+\item 
+typedef {\bf refcounted\+\_\+ptr}($\ast$ {\bf entry\+\_\+point\+\_\+type}) ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Signature $>$ }\\{\bf booster\+::callback}$<$ Signature $>$ {\bf entry} (std\+::string const \&plugin\+\_\+name, std\+::string const \&entry\+\_\+name)
+\item 
+{\footnotesize template$<$typename Signature $>$ }\\bool {\bf has\+\_\+entry} (std\+::string const \&plugin, std\+::string const \&name)
+\item 
+{\bf entry\+\_\+point\+\_\+type} {\bf get\+\_\+entry} (std\+::string const \&plugin, std\+::string const \&name)
+\item 
+std\+::string {\bf signature} (std\+::string const \&plugin, std\+::string const \&name)
+\item 
+void {\bf add\+\_\+entry} (char const $\ast$plugin\+\_\+name, char const $\ast$entry\+\_\+name, {\bf entry\+\_\+point\+\_\+type} {\bf entry}, char const $\ast${\bf signature})
+\item 
+void {\bf remove\+\_\+entry} ({\bf entry\+\_\+point\+\_\+type} {\bf entry})
+\item 
+std\+::set$<$ std\+::string $>$ {\bf plugins} ()
+\item 
+std\+::set$<$ std\+::string $>$ {\bf entries} (std\+::string const \&plugin)
+\item 
+bool {\bf has\+\_\+plugin} (std\+::string const \&name)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf manager} \& {\bf instance} ()
+\end{DoxyCompactItemize}
+\subsection*{Related Functions}
+(Note that these are not member functions.) \begin{DoxyCompactItemize}
+\item 
+\#define {\bf C\+P\+P\+C\+M\+S\+\_\+\+F\+U\+L\+L\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+E\+N\+T\+RY}(plugin\+\_\+name,  entry\+\_\+name,  call,  type)
+\item 
+\#define {\bf C\+P\+P\+C\+M\+S\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+E\+N\+T\+RY}(name,  call,  type)~{\bf C\+P\+P\+C\+M\+S\+\_\+\+F\+U\+L\+L\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+E\+N\+T\+RY}(\#name,\#call,\& name \+:: call,type)
+\item 
+\#define {\bf C\+P\+P\+C\+M\+S\+\_\+\+N\+A\+M\+E\+D\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+E\+N\+T\+RY}(name,  {\bf entry},  call,  type)~{\bf C\+P\+P\+C\+M\+S\+\_\+\+F\+U\+L\+L\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+E\+N\+T\+RY}(\#name,\#{\bf entry},\& name \+:: call,type)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Central class that manages registration of plugins.
+
+It is used as singleton and accessed via \doxyref{manager\+::instance()}{p.}{classcppcms_1_1plugin_1_1manager_aa2fcca201f85204d0fdbbc46a391c248}.
+
+Each plugin registers itself in the constructor and destructor implemented in shared library.
+
+\doxyref{New in Cpp\+C\+MS 1.\+2}{p.}{v1_2} 
+
+\subsection{Member Typedef Documentation}
+\index{cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}!entry\+\_\+point\+\_\+type@{entry\+\_\+point\+\_\+type}}
+\index{entry\+\_\+point\+\_\+type@{entry\+\_\+point\+\_\+type}!cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}}
+\subsubsection[{entry\+\_\+point\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf refcounted\+\_\+ptr}($\ast$ cppcms\+::plugin\+::manager\+::entry\+\_\+point\+\_\+type) ()}\label{classcppcms_1_1plugin_1_1manager_a9f368fedcc9ce93c91564a27d42a87a1}
+Functions registered as plugin entry points 
+
+\subsection{Member Function Documentation}
+\index{cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}!add\+\_\+entry@{add\+\_\+entry}}
+\index{add\+\_\+entry@{add\+\_\+entry}!cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}}
+\subsubsection[{add\+\_\+entry(char const $\ast$plugin\+\_\+name, char const $\ast$entry\+\_\+name, entry\+\_\+point\+\_\+type entry, char const $\ast$signature)}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\+::plugin\+::manager\+::add\+\_\+entry (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{plugin\+\_\+name, }
+\item[{char const $\ast$}]{entry\+\_\+name, }
+\item[{{\bf entry\+\_\+point\+\_\+type}}]{entry, }
+\item[{char const $\ast$}]{signature}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1plugin_1_1manager_afa102d94fb41061df3ebf678386926a1}
+Addes entry to the plugin manager -\/ thread safe function \index{cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}!entries@{entries}}
+\index{entries@{entries}!cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}}
+\subsubsection[{entries(std\+::string const \&plugin)}]{\setlength{\rightskip}{0pt plus 5cm}std\+::set$<$std\+::string$>$ cppcms\+::plugin\+::manager\+::entries (
+\begin{DoxyParamCaption}
+\item[{std\+::string const \&}]{plugin}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1plugin_1_1manager_a803faf06300807d76245b8eac0a16a79}
+Get list of all entry names for {\itshape plugin} \index{cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}!entry@{entry}}
+\index{entry@{entry}!cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}}
+\subsubsection[{entry(std\+::string const \&plugin\+\_\+name, std\+::string const \&entry\+\_\+name)}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Signature $>$ {\bf booster\+::callback}$<$Signature$>$ cppcms\+::plugin\+::manager\+::entry (
+\begin{DoxyParamCaption}
+\item[{std\+::string const \&}]{plugin\+\_\+name, }
+\item[{std\+::string const \&}]{entry\+\_\+name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1plugin_1_1manager_ad6b65ee74c3f62e9e175bdc6d2f1a99c}
+Get plugin entry by {\itshape plugin\+\_\+name}, {\itshape entry\+\_\+name} and {\itshape Signature} 
+
+If entry is not found or no entry point is created throws \doxyref{cppcms\+\_\+error}{p.}{classcppcms_1_1cppcms__error},if Signature mismatches the callback type throws \doxyref{booster\+::bad\+\_\+cast}{p.}{classbooster_1_1bad__cast}
+
+For example 
+\begin{DoxyCode}
+booster::callback<cppcms::application *(cppcms::service &)> cb = :
+      manager::instance().entry<cppcms::application *(cppcms::service &)>(\textcolor{stringliteral}{"foo"},\textcolor{stringliteral}{"application"});
+cppcms::application *app =cb(service());
+attach(app,\textcolor{stringliteral}{"/plugins/foo(/.*)"},1); \textcolor{comment}{// attach new application}
+\end{DoxyCode}
+
+
+Or
+
+
+\begin{DoxyCode}
+cppcms::application *app = manager::instance().entry<cppcms::application *(
+      cppcms::service &)>(\textcolor{stringliteral}{"myapi"},\textcolor{stringliteral}{"app::generator"})(service());
+attach(app,\textcolor{stringliteral}{"/plugins/foo(/.*)"},1);
+\end{DoxyCode}
+ 
+
+References get\+\_\+entry().
+
+\index{cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}!get\+\_\+entry@{get\+\_\+entry}}
+\index{get\+\_\+entry@{get\+\_\+entry}!cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}}
+\subsubsection[{get\+\_\+entry(std\+::string const \&plugin, std\+::string const \&name)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf entry\+\_\+point\+\_\+type} cppcms\+::plugin\+::manager\+::get\+\_\+entry (
+\begin{DoxyParamCaption}
+\item[{std\+::string const \&}]{plugin, }
+\item[{std\+::string const \&}]{name}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1plugin_1_1manager_ab785cb128bb784f8d3296d3b509048b4}
+Get entry point that creates a base of booster\+::callback\+::callable\+\_\+type 
+
+Referenced by entry().
+
+\index{cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}!has\+\_\+entry@{has\+\_\+entry}}
+\index{has\+\_\+entry@{has\+\_\+entry}!cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}}
+\subsubsection[{has\+\_\+entry(std\+::string const \&plugin, std\+::string const \&name)}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Signature $>$ bool cppcms\+::plugin\+::manager\+::has\+\_\+entry (
+\begin{DoxyParamCaption}
+\item[{std\+::string const \&}]{plugin, }
+\item[{std\+::string const \&}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1plugin_1_1manager_ab535ee9cb2b8c34d41d0b58d58520d68}
+Check if plugin entry of type Signature exists in a plugin {\itshape plugin} named {\itshape name} \index{cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}!has\+\_\+plugin@{has\+\_\+plugin}}
+\index{has\+\_\+plugin@{has\+\_\+plugin}!cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}}
+\subsubsection[{has\+\_\+plugin(std\+::string const \&name)}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\+::plugin\+::manager\+::has\+\_\+plugin (
+\begin{DoxyParamCaption}
+\item[{std\+::string const \&}]{name}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1plugin_1_1manager_a6c50dac43a7d45963b484d86c94014ba}
+Returns true if plugin {\itshape name} is loaded \index{cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}!instance@{instance}}
+\index{instance@{instance}!cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}}
+\subsubsection[{instance()}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf manager}\& cppcms\+::plugin\+::manager\+::instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classcppcms_1_1plugin_1_1manager_aa2fcca201f85204d0fdbbc46a391c248}
+Get the instance of the manager \index{cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}!plugins@{plugins}}
+\index{plugins@{plugins}!cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}}
+\subsubsection[{plugins()}]{\setlength{\rightskip}{0pt plus 5cm}std\+::set$<$std\+::string$>$ cppcms\+::plugin\+::manager\+::plugins (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1plugin_1_1manager_a114222d0306993679ef12a85ad33ef94}
+Get list of all plugin names \index{cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}!remove\+\_\+entry@{remove\+\_\+entry}}
+\index{remove\+\_\+entry@{remove\+\_\+entry}!cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}}
+\subsubsection[{remove\+\_\+entry(entry\+\_\+point\+\_\+type entry)}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\+::plugin\+::manager\+::remove\+\_\+entry (
+\begin{DoxyParamCaption}
+\item[{{\bf entry\+\_\+point\+\_\+type}}]{entry}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1plugin_1_1manager_ac1cc3802059f50a027a8ca6919b6cdbd}
+Removes entry from the plugin manager -\/ thread safe function \index{cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}!signature@{signature}}
+\index{signature@{signature}!cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}}
+\subsubsection[{signature(std\+::string const \&plugin, std\+::string const \&name)}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string cppcms\+::plugin\+::manager\+::signature (
+\begin{DoxyParamCaption}
+\item[{std\+::string const \&}]{plugin, }
+\item[{std\+::string const \&}]{name}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1plugin_1_1manager_a73282f9b317afbca5f8125db8eb96769}
+Get textual representation of entry point signature -\/ for logging purposes, if not found returns empty string 
+
+\subsection{Friends And Related Function Documentation}
+\index{cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}!C\+P\+P\+C\+M\+S\+\_\+\+F\+U\+L\+L\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+E\+N\+T\+RY@{C\+P\+P\+C\+M\+S\+\_\+\+F\+U\+L\+L\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+E\+N\+T\+RY}}
+\index{C\+P\+P\+C\+M\+S\+\_\+\+F\+U\+L\+L\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+E\+N\+T\+RY@{C\+P\+P\+C\+M\+S\+\_\+\+F\+U\+L\+L\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+E\+N\+T\+RY}!cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}}
+\subsubsection[{C\+P\+P\+C\+M\+S\+\_\+\+F\+U\+L\+L\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+E\+N\+T\+RY}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+P\+P\+C\+M\+S\+\_\+\+F\+U\+L\+L\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+E\+N\+T\+RY(
+\begin{DoxyParamCaption}
+\item[{}]{plugin\+\_\+name, }
+\item[{}]{entry\+\_\+name, }
+\item[{}]{call, }
+\item[{}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}\label{classcppcms_1_1plugin_1_1manager_ad1d03a84f5f236dc3f1176cae370e1be}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{namespace }\{                                                                             \(\backslash\)
+        struct CPPCMS\_PLUGIN\_CONCAT2(stpg\_ , \_\_LINE\_\_) \{                                \(\backslash\)
+                static booster::intrusive_ptr<booster::refcounted> entry()              \(\backslash\)
+                \{                                                                       \(\backslash\)
+                        typedef booster::callback<type> ct;                             \(\backslash\)
+                        ct cb = call;                                                   \(\backslash\)
+                        booster::refcounted *tmp = cb.get\_pointer().get();              \(\backslash\)
+                        booster::intrusive\_ptr<booster::refcounted> ptr(tmp);           \(\backslash\)
+                        return ptr;                                                     \(\backslash\)
+                \}                                                                       \(\backslash\)
+                CPPCMS\_PLUGIN\_CONCAT2(stpg\_,\_\_LINE\_\_) () \{                              
+      \
+			cppcms::plugin::manager::instance().add_entry(                       \(\backslash\)
+                                plugin\_name,entry\_name,&entry,#type                     \(\backslash\)
+                        );                                                              \(\backslash\)
+                                                                                        \(\backslash\)
+                \}                                                                       \(\backslash\)
+                ~CPPCMS\_PLUGIN\_CONCAT2(stpg\_,\_\_LINE\_\_)() \{                              
+      \
+			cppcms::plugin::manager::instance().remove_entry(&entry);    \(\backslash\)
+                \}                                                                       \(\backslash\)
+        \} CPPCMS\_PLUGIN\_CONCAT2(instance\_of\_stpg\_,\_\_LINE\_\_);                            \(\backslash\)
+\}
+\end{DoxyCode}
+Install generic plugin entry in plugin named {\itshape plugin\+\_\+name} -\/ string, the entry name {\itshape entry\+\_\+name} -\/ string and such that following expression is valid callback iniitalization\+: {\ttfamily \doxyref{booster\+::callback}{p.}{classbooster_1_1callback}$<$type$>$ cb = call;}
+
+For example 
+\begin{DoxyCode}
+\textcolor{keyword}{class }my\_class : \textcolor{keyword}{public} plugin\_api \{
+\textcolor{keyword}{public}:
+   statuc my\_class *create(std::string \textcolor{keyword}{const} &parameter) \{ \textcolor{keywordflow}{return} \textcolor{keyword}{new} my\_class(parameter); \}
+   ...
+\};
+CPPCMS_PLUGIN_ENTRY(\textcolor{stringliteral}{"myplugin"},\textcolor{stringliteral}{"api"},&my\_class::create,plugin\_api *(std::string \textcolor{keyword}{const} &))
+\}
+\end{DoxyCode}
+
+
+it is accessed as {\ttfamily \doxyref{manager\+::instance()}{p.}{classcppcms_1_1plugin_1_1manager_aa2fcca201f85204d0fdbbc46a391c248}.entry$<$plugin\+\_\+api $\ast$(std\+::string const \&)$>$(\char`\"{}myplugin\char`\"{},\char`\"{}my\+\_\+class\+::create\char`\"{})} \index{cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}!C\+P\+P\+C\+M\+S\+\_\+\+N\+A\+M\+E\+D\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+E\+N\+T\+RY@{C\+P\+P\+C\+M\+S\+\_\+\+N\+A\+M\+E\+D\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+E\+N\+T\+RY}}
+\index{C\+P\+P\+C\+M\+S\+\_\+\+N\+A\+M\+E\+D\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+E\+N\+T\+RY@{C\+P\+P\+C\+M\+S\+\_\+\+N\+A\+M\+E\+D\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+E\+N\+T\+RY}!cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}}
+\subsubsection[{C\+P\+P\+C\+M\+S\+\_\+\+N\+A\+M\+E\+D\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+E\+N\+T\+RY}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+P\+P\+C\+M\+S\+\_\+\+N\+A\+M\+E\+D\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+E\+N\+T\+RY(
+\begin{DoxyParamCaption}
+\item[{}]{name, }
+\item[{}]{{\bf entry}, }
+\item[{}]{call, }
+\item[{}]{type}
+\end{DoxyParamCaption}
+)~{\bf C\+P\+P\+C\+M\+S\+\_\+\+F\+U\+L\+L\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+E\+N\+T\+RY}(\#name,\#{\bf entry},\& name \+:: call,type)\hspace{0.3cm}{\ttfamily [related]}}\label{classcppcms_1_1plugin_1_1manager_a9c569e1e33204a0579b417b3b6ec56fd}
+Install common function entry such that {\itshape name} is plugin name, {\itshape entry} is entry name and {\ttfamily \&name\+::call} is valid assignment for booster\+::callback$<$type$>$
+
+Usually name should be namespace or class name, call is function or static member functions
+
+For example 
+\begin{DoxyCode}
+\textcolor{keyword}{namespace }myplugin \{
+    \textcolor{keyword}{class }my\_class : \textcolor{keyword}{public} plugin\_api \{
+    \textcolor{keyword}{public}:
+        statuc my\_class *create(std::string \textcolor{keyword}{const} &parameter) \{ \textcolor{keywordflow}{return} \textcolor{keyword}{new} my\_class(parameter); \}
+        ...
+    \};
+    CPPCMS_NAMED_PLUGIN_ENTRY(myplugin,api,my\_class::create,plugin\_api *(std::string \textcolor{keyword}{const} &))
+\}
+\end{DoxyCode}
+
+
+it is accessed as {\ttfamily \doxyref{manager\+::instance()}{p.}{classcppcms_1_1plugin_1_1manager_aa2fcca201f85204d0fdbbc46a391c248}.entry$<$plugin\+\_\+api $\ast$(std\+::string const \&)$>$(\char`\"{}myplugin\char`\"{},\char`\"{}api\char`\"{})} \index{cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}!C\+P\+P\+C\+M\+S\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+E\+N\+T\+RY@{C\+P\+P\+C\+M\+S\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+E\+N\+T\+RY}}
+\index{C\+P\+P\+C\+M\+S\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+E\+N\+T\+RY@{C\+P\+P\+C\+M\+S\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+E\+N\+T\+RY}!cppcms\+::plugin\+::manager@{cppcms\+::plugin\+::manager}}
+\subsubsection[{C\+P\+P\+C\+M\+S\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+E\+N\+T\+RY}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+P\+P\+C\+M\+S\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+E\+N\+T\+RY(
+\begin{DoxyParamCaption}
+\item[{}]{name, }
+\item[{}]{call, }
+\item[{}]{type}
+\end{DoxyParamCaption}
+)~{\bf C\+P\+P\+C\+M\+S\+\_\+\+F\+U\+L\+L\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+E\+N\+T\+RY}(\#name,\#call,\& name \+:: call,type)\hspace{0.3cm}{\ttfamily [related]}}\label{classcppcms_1_1plugin_1_1manager_a1ae148f67aeefdd88ddcdadc60332a57}
+Install common function entry such that {\itshape name} is plugin name, {\itshape call} is entry name and {\ttfamily \&name\+::call} is valid assignment for booster\+::callback$<$type$>$
+
+Usually name should be namespace or class name, call is function or static member functions
+
+For example 
+\begin{DoxyCode}
+\textcolor{keyword}{namespace }myplugin \{
+    \textcolor{keyword}{class }my\_class : \textcolor{keyword}{public} plugin\_api \{
+    \textcolor{keyword}{public}:
+        statuc my\_class *create(std::string \textcolor{keyword}{const} &parameter) \{ \textcolor{keywordflow}{return} \textcolor{keyword}{new} my\_class(parameter); \}
+        ...
+    \};
+    CPPCMS_PLUGIN_ENTRY(myplugin,my\_class::create,plugin\_api *(std::string \textcolor{keyword}{const} &))
+\}
+\end{DoxyCode}
+
+
+it is accessed as {\ttfamily \doxyref{manager\+::instance()}{p.}{classcppcms_1_1plugin_1_1manager_aa2fcca201f85204d0fdbbc46a391c248}.entry$<$plugin\+\_\+api $\ast$(std\+::string const \&)$>$(\char`\"{}myplugin\char`\"{},\char`\"{}my\+\_\+class\+::create\char`\"{})} 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+cppcms/plugin.\+h\end{DoxyCompactItemize}

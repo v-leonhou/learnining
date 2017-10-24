@@ -1,0 +1,143 @@
+\section{cppcms\+:\+:plugin\+:\+:scope Class Reference}
+\label{classcppcms_1_1plugin_1_1scope}\index{cppcms\+::plugin\+::scope@{cppcms\+::plugin\+::scope}}
+
+
+{\ttfamily \#include $<$cppcms/plugin.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf scope} ()
+\item 
+{\bf $\sim$scope} ()
+\item 
+{\bf scope} (int argc, char $\ast$$\ast$argv)
+\item 
+{\bf scope} ({\bf json\+::value} const \&value)
+\item 
+void {\bf paths} (std\+::vector$<$ std\+::string $>$ const \&paths)
+\begin{DoxyCompactList}\small\item\em Set search path for plugins if undefined search according to the OS rules, if one of the paths in the vector is empty the search is performed by. \end{DoxyCompactList}\item 
+void {\bf shared\+\_\+object\+\_\+pattern} (std\+::string const \&pattern)
+\item 
+void {\bf load} (std\+::string const \&module)
+\item 
+{\bf booster\+::shared\+\_\+object} const \& {\bf get} (std\+::string const \&module) const 
+\item 
+bool {\bf is\+\_\+loaded\+\_\+by\+\_\+this\+\_\+scope} (std\+::string const \&module) const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bf is\+\_\+loaded} (std\+::string const \&module)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that esures that plugin is loaded and unloads it in destructor if needed
+
+Note\+: it tracks the loaded plugins by its name globally such that if another scope had loaded the plugin it wouldn\textquotesingle{}t be loaded again.
+
+It is useable when plugin should be used outside of life scope of \doxyref{cppcms\+::service}{p.}{classcppcms_1_1service}
+
+Cpp\+C\+MS configuration\+:
+
+
+\begin{DoxyItemize}
+\item The search paths defined as array of strings in {\ttfamily plugin.\+paths} (optional)
+\item List of modules defined as array of strings in {\ttfamily plugin.\+modules} (optional, if you want to call load later)
+\item Shared object pattern defined as string in {\ttfamily plugin.\+shared\+\_\+object\+\_\+pattern} (optional)
+\end{DoxyItemize}
+
+\doxyref{New in Cpp\+C\+MS 1.\+2}{p.}{v1_2} 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\+::plugin\+::scope@{cppcms\+::plugin\+::scope}!scope@{scope}}
+\index{scope@{scope}!cppcms\+::plugin\+::scope@{cppcms\+::plugin\+::scope}}
+\subsubsection[{scope()}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\+::plugin\+::scope\+::scope (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1plugin_1_1scope_ac4ee5885dd3ada69edd3ccbbf699829e}
+Create an empty scope \index{cppcms\+::plugin\+::scope@{cppcms\+::plugin\+::scope}!````~scope@{$\sim$scope}}
+\index{````~scope@{$\sim$scope}!cppcms\+::plugin\+::scope@{cppcms\+::plugin\+::scope}}
+\subsubsection[{$\sim$scope()}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\+::plugin\+::scope\+::$\sim$scope (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1plugin_1_1scope_a7b0efe9aaade3e43a525a0b532059f50}
+Unloads all loaded plugins \index{cppcms\+::plugin\+::scope@{cppcms\+::plugin\+::scope}!scope@{scope}}
+\index{scope@{scope}!cppcms\+::plugin\+::scope@{cppcms\+::plugin\+::scope}}
+\subsubsection[{scope(int argc, char $\ast$$\ast$argv)}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\+::plugin\+::scope\+::scope (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1plugin_1_1scope_a183da4a7d5752183eea3f8539187a416}
+Loads the plugins provided in main cppcms configuration file -\/ argc,argv are same parameters as for \doxyref{cppcms\+::service}{p.}{classcppcms_1_1service} constructor \index{cppcms\+::plugin\+::scope@{cppcms\+::plugin\+::scope}!scope@{scope}}
+\index{scope@{scope}!cppcms\+::plugin\+::scope@{cppcms\+::plugin\+::scope}}
+\subsubsection[{scope(json\+::value const \&value)}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\+::plugin\+::scope\+::scope (
+\begin{DoxyParamCaption}
+\item[{{\bf json\+::value} const \&}]{value}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1plugin_1_1scope_a0cb7e1aab95945ba580d7a0291ecbb0a}
+Loads the plugins provided in main cppcms configuration json file -\/ same parameters as for \doxyref{cppcms\+::service}{p.}{classcppcms_1_1service} constructor 
+
+\subsection{Member Function Documentation}
+\index{cppcms\+::plugin\+::scope@{cppcms\+::plugin\+::scope}!get@{get}}
+\index{get@{get}!cppcms\+::plugin\+::scope@{cppcms\+::plugin\+::scope}}
+\subsubsection[{get(std\+::string const \&module) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf booster\+::shared\+\_\+object} const\& cppcms\+::plugin\+::scope\+::get (
+\begin{DoxyParamCaption}
+\item[{std\+::string const \&}]{module}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1plugin_1_1scope_a8031ecaf3c3f2939365281051437bbce}
+Get shared object loading withing {\itshape this} scope. If it wasn\textquotesingle{}t loaded withing this scope throws \doxyref{cppcms\+\_\+error}{p.}{classcppcms_1_1cppcms__error} \index{cppcms\+::plugin\+::scope@{cppcms\+::plugin\+::scope}!is\+\_\+loaded@{is\+\_\+loaded}}
+\index{is\+\_\+loaded@{is\+\_\+loaded}!cppcms\+::plugin\+::scope@{cppcms\+::plugin\+::scope}}
+\subsubsection[{is\+\_\+loaded(std\+::string const \&module)}]{\setlength{\rightskip}{0pt plus 5cm}static bool cppcms\+::plugin\+::scope\+::is\+\_\+loaded (
+\begin{DoxyParamCaption}
+\item[{std\+::string const \&}]{module}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classcppcms_1_1plugin_1_1scope_a0422ed66c805cb823bb2174c58950bb9}
+Check if the module was loaded withing any of the scopes -\/ note it is static member function \index{cppcms\+::plugin\+::scope@{cppcms\+::plugin\+::scope}!is\+\_\+loaded\+\_\+by\+\_\+this\+\_\+scope@{is\+\_\+loaded\+\_\+by\+\_\+this\+\_\+scope}}
+\index{is\+\_\+loaded\+\_\+by\+\_\+this\+\_\+scope@{is\+\_\+loaded\+\_\+by\+\_\+this\+\_\+scope}!cppcms\+::plugin\+::scope@{cppcms\+::plugin\+::scope}}
+\subsubsection[{is\+\_\+loaded\+\_\+by\+\_\+this\+\_\+scope(std\+::string const \&module) const }]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\+::plugin\+::scope\+::is\+\_\+loaded\+\_\+by\+\_\+this\+\_\+scope (
+\begin{DoxyParamCaption}
+\item[{std\+::string const \&}]{module}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1plugin_1_1scope_a759ac194359352b2037ef27aeadb1bd2}
+Check if module is loaded withing this scope, unlike is\+\_\+loaded that checks for the module globally, it refers to this scope only \index{cppcms\+::plugin\+::scope@{cppcms\+::plugin\+::scope}!load@{load}}
+\index{load@{load}!cppcms\+::plugin\+::scope@{cppcms\+::plugin\+::scope}}
+\subsubsection[{load(std\+::string const \&module)}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\+::plugin\+::scope\+::load (
+\begin{DoxyParamCaption}
+\item[{std\+::string const \&}]{module}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1plugin_1_1scope_a64e0df371f31bca4935257660ab28b6c}
+Load specific module according to the paths and shared\+\_\+object\+\_\+pattern provided. Also note paths and pattern can be defined in cppcms configuration in the constructor
+
+\begin{DoxyNote}{Note}
+module name isn\textquotesingle{}t nessary same as plugin name. Module refers to name of shared object or dll while plugin is application defined. Same dll/so can contain multiple plugins or none. 
+\end{DoxyNote}
+\index{cppcms\+::plugin\+::scope@{cppcms\+::plugin\+::scope}!paths@{paths}}
+\index{paths@{paths}!cppcms\+::plugin\+::scope@{cppcms\+::plugin\+::scope}}
+\subsubsection[{paths(std\+::vector$<$ std\+::string $>$ const \&paths)}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\+::plugin\+::scope\+::paths (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ std\+::string $>$ const \&}]{paths}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1plugin_1_1scope_ab6274d48ab33bd360ba0b2466b5e7636}
+
+
+Set search path for plugins if undefined search according to the OS rules, if one of the paths in the vector is empty the search is performed by. 
+
+OS search rules \index{cppcms\+::plugin\+::scope@{cppcms\+::plugin\+::scope}!shared\+\_\+object\+\_\+pattern@{shared\+\_\+object\+\_\+pattern}}
+\index{shared\+\_\+object\+\_\+pattern@{shared\+\_\+object\+\_\+pattern}!cppcms\+::plugin\+::scope@{cppcms\+::plugin\+::scope}}
+\subsubsection[{shared\+\_\+object\+\_\+pattern(std\+::string const \&pattern)}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\+::plugin\+::scope\+::shared\+\_\+object\+\_\+pattern (
+\begin{DoxyParamCaption}
+\item[{std\+::string const \&}]{pattern}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1plugin_1_1scope_af758773c252c755543cd0937e18e9f54}
+Specify shared object/\+D\+LL naming convension. For example {\ttfamily lib\{1\}.dll} or {\ttfamily lib\{1\}.so} for converting the module name to shared object/dll name.
+
+Thus in the shared object {\itshape pattern} is {\ttfamily lib\{1\}.dll} that when module \char`\"{}foo\char`\"{} is loaded it tries to load {\ttfamily libfoo.\+dll} If not speficied default nameing is used, see \doxyref{booster\+::shared\+\_\+object\+::name}{p.}{classbooster_1_1shared__object_a2430f1a6ec468f30640138e32a8544e8} 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+cppcms/plugin.\+h\end{DoxyCompactItemize}

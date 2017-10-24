@@ -1,0 +1,61 @@
+\section{booster\+:\+:log\+:\+:sinks\+:\+:stream Class Reference}
+\label{classbooster_1_1log_1_1sinks_1_1stream}\index{booster\+::log\+::sinks\+::stream@{booster\+::log\+::sinks\+::stream}}
+
+
+log sink for a generic std\+::ostream  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/log.\+h$>$}
+
+Inheritance diagram for booster\+:\+:log\+:\+:sinks\+:\+:stream\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classbooster_1_1log_1_1sinks_1_1stream}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf stream} (std\+::ostream \&s)
+\item 
+virtual void {\bf log} ({\bf message} const \&msg)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+log sink for a generic std\+::ostream 
+
+\begin{DoxyNote}{Note}
+{\itshape s} should be valid as long as the object exists
+\end{DoxyNote}
+\doxyref{New in Cpp\+C\+MS 1.\+2}{p.}{v1_2} 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\+::log\+::sinks\+::stream@{booster\+::log\+::sinks\+::stream}!stream@{stream}}
+\index{stream@{stream}!booster\+::log\+::sinks\+::stream@{booster\+::log\+::sinks\+::stream}}
+\subsubsection[{stream(std\+::ostream \&s)}]{\setlength{\rightskip}{0pt plus 5cm}booster\+::log\+::sinks\+::stream\+::stream (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{s}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1log_1_1sinks_1_1stream_a14bb1e368f9a85ff07c1352a253f20f0}
+Create a new sink, {\itshape s} output stream 
+
+\subsection{Member Function Documentation}
+\index{booster\+::log\+::sinks\+::stream@{booster\+::log\+::sinks\+::stream}!log@{log}}
+\index{log@{log}!booster\+::log\+::sinks\+::stream@{booster\+::log\+::sinks\+::stream}}
+\subsubsection[{log(message const \&msg)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void booster\+::log\+::sinks\+::stream\+::log (
+\begin{DoxyParamCaption}
+\item[{{\bf message} const \&}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classbooster_1_1log_1_1sinks_1_1stream_a51551a91c414304d7b96dab56bf45a21}
+Log the message to the file 
+
+Implements {\bf booster\+::log\+::sink} \doxyref{}{p.}{classbooster_1_1log_1_1sink_a26ca4b2db51cd3debdf5fed5bac3d5e0}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+booster/{\bf log.\+h}\end{DoxyCompactItemize}

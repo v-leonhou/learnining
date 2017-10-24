@@ -1,0 +1,90 @@
+\section{cppcms\+:\+:util\+:\+:const\+\_\+char\+\_\+istream Class Reference}
+\label{classcppcms_1_1util_1_1const__char__istream}\index{cppcms\+::util\+::const\+\_\+char\+\_\+istream@{cppcms\+::util\+::const\+\_\+char\+\_\+istream}}
+
+
+{\ttfamily \#include $<$cppcms/steal\+\_\+buf.\+h$>$}
+
+Inheritance diagram for cppcms\+:\+:util\+:\+:const\+\_\+char\+\_\+istream\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1util_1_1const__char__istream}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf const\+\_\+char\+\_\+istream} ()
+\item 
+{\bf const\+\_\+char\+\_\+istream} (char const $\ast${\bf begin}, char const $\ast${\bf end})
+\item 
+char const $\ast$ {\bf begin} () const 
+\item 
+char const $\ast$ {\bf end} () const 
+\item 
+void {\bf range} (char const $\ast${\bf begin}, char const $\ast${\bf end})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple std\+::istream implementation for range of [char const $\ast$,char const $\ast$)
+
+\doxyref{New in Cpp\+C\+MS 1.\+2}{p.}{v1_2} 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\+::util\+::const\+\_\+char\+\_\+istream@{cppcms\+::util\+::const\+\_\+char\+\_\+istream}!const\+\_\+char\+\_\+istream@{const\+\_\+char\+\_\+istream}}
+\index{const\+\_\+char\+\_\+istream@{const\+\_\+char\+\_\+istream}!cppcms\+::util\+::const\+\_\+char\+\_\+istream@{cppcms\+::util\+::const\+\_\+char\+\_\+istream}}
+\subsubsection[{const\+\_\+char\+\_\+istream()}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\+::util\+::const\+\_\+char\+\_\+istream\+::const\+\_\+char\+\_\+istream (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1util_1_1const__char__istream_aeada5cc12dfcffdc473f91c041897a38}
+Create new empty stream \index{cppcms\+::util\+::const\+\_\+char\+\_\+istream@{cppcms\+::util\+::const\+\_\+char\+\_\+istream}!const\+\_\+char\+\_\+istream@{const\+\_\+char\+\_\+istream}}
+\index{const\+\_\+char\+\_\+istream@{const\+\_\+char\+\_\+istream}!cppcms\+::util\+::const\+\_\+char\+\_\+istream@{cppcms\+::util\+::const\+\_\+char\+\_\+istream}}
+\subsubsection[{const\+\_\+char\+\_\+istream(char const $\ast$begin, char const $\ast$end)}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\+::util\+::const\+\_\+char\+\_\+istream\+::const\+\_\+char\+\_\+istream (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1util_1_1const__char__istream_ad0a96b95b64803c83e32e1947d78db43}
+Create stream initialized with range [begin,end) 
+
+\subsection{Member Function Documentation}
+\index{cppcms\+::util\+::const\+\_\+char\+\_\+istream@{cppcms\+::util\+::const\+\_\+char\+\_\+istream}!begin@{begin}}
+\index{begin@{begin}!cppcms\+::util\+::const\+\_\+char\+\_\+istream@{cppcms\+::util\+::const\+\_\+char\+\_\+istream}}
+\subsubsection[{begin() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ cppcms\+::util\+::const\+\_\+char\+\_\+istream\+::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1util_1_1const__char__istream_a4dc84c42e58a9456a43e3d596f54b3ba}
+Get begin of the range 
+
+Referenced by cppcms\+::parse\+\_\+url\+\_\+parameter().
+
+\index{cppcms\+::util\+::const\+\_\+char\+\_\+istream@{cppcms\+::util\+::const\+\_\+char\+\_\+istream}!end@{end}}
+\index{end@{end}!cppcms\+::util\+::const\+\_\+char\+\_\+istream@{cppcms\+::util\+::const\+\_\+char\+\_\+istream}}
+\subsubsection[{end() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ cppcms\+::util\+::const\+\_\+char\+\_\+istream\+::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1util_1_1const__char__istream_a9e46a22615654c1f7c13852586eb7fc8}
+Get end of the range 
+
+Referenced by cppcms\+::parse\+\_\+url\+\_\+parameter().
+
+\index{cppcms\+::util\+::const\+\_\+char\+\_\+istream@{cppcms\+::util\+::const\+\_\+char\+\_\+istream}!range@{range}}
+\index{range@{range}!cppcms\+::util\+::const\+\_\+char\+\_\+istream@{cppcms\+::util\+::const\+\_\+char\+\_\+istream}}
+\subsubsection[{range(char const $\ast$begin, char const $\ast$end)}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\+::util\+::const\+\_\+char\+\_\+istream\+::range (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1util_1_1const__char__istream_af64c02593812e450e3795e7ab8e7fdac}
+Set range, resets pointer to start and clears flags 
+
+Referenced by cppcms\+::url\+\_\+dispatcher\+::assign().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+cppcms/steal\+\_\+buf.\+h\end{DoxyCompactItemize}

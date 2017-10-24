@@ -1,0 +1,102 @@
+\section{cppcms\+:\+:util\+:\+:const\+\_\+char\+\_\+buf Class Reference}
+\label{classcppcms_1_1util_1_1const__char__buf}\index{cppcms\+::util\+::const\+\_\+char\+\_\+buf@{cppcms\+::util\+::const\+\_\+char\+\_\+buf}}
+
+
+{\ttfamily \#include $<$cppcms/steal\+\_\+buf.\+h$>$}
+
+Inheritance diagram for cppcms\+:\+:util\+:\+:const\+\_\+char\+\_\+buf\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1util_1_1const__char__buf}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf const\+\_\+char\+\_\+buf} ()
+\item 
+{\bf const\+\_\+char\+\_\+buf} (char const $\ast${\bf begin}, char const $\ast${\bf end})
+\item 
+void {\bf range} (char const $\ast$cbegin, char const $\ast$cend)
+\item 
+char const $\ast$ {\bf begin} () const 
+\item 
+char const $\ast$ {\bf end} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple std\+::streambuf to create input from [char const $\ast$,char const $\ast$) range
+
+\doxyref{New in Cpp\+C\+MS 1.\+2}{p.}{v1_2} 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\+::util\+::const\+\_\+char\+\_\+buf@{cppcms\+::util\+::const\+\_\+char\+\_\+buf}!const\+\_\+char\+\_\+buf@{const\+\_\+char\+\_\+buf}}
+\index{const\+\_\+char\+\_\+buf@{const\+\_\+char\+\_\+buf}!cppcms\+::util\+::const\+\_\+char\+\_\+buf@{cppcms\+::util\+::const\+\_\+char\+\_\+buf}}
+\subsubsection[{const\+\_\+char\+\_\+buf()}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\+::util\+::const\+\_\+char\+\_\+buf\+::const\+\_\+char\+\_\+buf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1util_1_1const__char__buf_aa9ffb8af281415989591937c147798c8}
+Create Empty buffer 
+
+References range().
+
+\index{cppcms\+::util\+::const\+\_\+char\+\_\+buf@{cppcms\+::util\+::const\+\_\+char\+\_\+buf}!const\+\_\+char\+\_\+buf@{const\+\_\+char\+\_\+buf}}
+\index{const\+\_\+char\+\_\+buf@{const\+\_\+char\+\_\+buf}!cppcms\+::util\+::const\+\_\+char\+\_\+buf@{cppcms\+::util\+::const\+\_\+char\+\_\+buf}}
+\subsubsection[{const\+\_\+char\+\_\+buf(char const $\ast$begin, char const $\ast$end)}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\+::util\+::const\+\_\+char\+\_\+buf\+::const\+\_\+char\+\_\+buf (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1util_1_1const__char__buf_accdec5e05e4611fe5d2536376dc3ae9b}
+Create a buffer from a range 
+
+References range().
+
+
+
+\subsection{Member Function Documentation}
+\index{cppcms\+::util\+::const\+\_\+char\+\_\+buf@{cppcms\+::util\+::const\+\_\+char\+\_\+buf}!begin@{begin}}
+\index{begin@{begin}!cppcms\+::util\+::const\+\_\+char\+\_\+buf@{cppcms\+::util\+::const\+\_\+char\+\_\+buf}}
+\subsubsection[{begin() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ cppcms\+::util\+::const\+\_\+char\+\_\+buf\+::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1util_1_1const__char__buf_a73fe3026fedd9050ab3bb07464916e7d}
+Begin of range 
+
+Referenced by cppcms\+::util\+::stackbuf$<$ Size $>$\+::c\+\_\+str(), range(), and cppcms\+::util\+::stackbuf$<$ Size $>$\+::str().
+
+\index{cppcms\+::util\+::const\+\_\+char\+\_\+buf@{cppcms\+::util\+::const\+\_\+char\+\_\+buf}!end@{end}}
+\index{end@{end}!cppcms\+::util\+::const\+\_\+char\+\_\+buf@{cppcms\+::util\+::const\+\_\+char\+\_\+buf}}
+\subsubsection[{end() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ cppcms\+::util\+::const\+\_\+char\+\_\+buf\+::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1util_1_1const__char__buf_add3d2312a19c78cc39b76aeca06ed045}
+End of range 
+
+Referenced by range(), and cppcms\+::util\+::stackbuf$<$ Size $>$\+::str().
+
+\index{cppcms\+::util\+::const\+\_\+char\+\_\+buf@{cppcms\+::util\+::const\+\_\+char\+\_\+buf}!range@{range}}
+\index{range@{range}!cppcms\+::util\+::const\+\_\+char\+\_\+buf@{cppcms\+::util\+::const\+\_\+char\+\_\+buf}}
+\subsubsection[{range(char const $\ast$cbegin, char const $\ast$cend)}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\+::util\+::const\+\_\+char\+\_\+buf\+::range (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{cbegin, }
+\item[{char const $\ast$}]{cend}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1util_1_1const__char__buf_ac96417b8d51a9b24b4d315cb75edd687}
+Define the range for existing buffer, pointer is reset to begin 
+
+References begin(), and end().
+
+
+
+Referenced by const\+\_\+char\+\_\+buf().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+cppcms/steal\+\_\+buf.\+h\end{DoxyCompactItemize}

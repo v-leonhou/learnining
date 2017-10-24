@@ -1,0 +1,96 @@
+\section{cppcms\+:\+:application\+\_\+specific\+\_\+pool Class Reference}
+\label{classcppcms_1_1application__specific__pool}\index{cppcms\+::application\+\_\+specific\+\_\+pool@{cppcms\+::application\+\_\+specific\+\_\+pool}}
+
+
+an interface for creating user applications  
+
+
+
+
+{\ttfamily \#include $<$cppcms/applications\+\_\+pool.\+h$>$}
+
+Inheritance diagram for cppcms\+:\+:application\+\_\+specific\+\_\+pool\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.485411cm]{classcppcms_1_1application__specific__pool}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf booster\+::intrusive\+\_\+ptr}$<$ {\bf application} $>$ {\bf asynchronous\+\_\+application\+\_\+by\+\_\+io\+\_\+service} ({\bf booster\+::aio\+::io\+\_\+service} \&io\+\_\+srv, {\bf cppcms\+::service} \&srv)
+\item 
+{\bf booster\+::intrusive\+\_\+ptr}$<$ {\bf application} $>$ {\bf asynchronous\+\_\+application\+\_\+by\+\_\+io\+\_\+service} ({\bf booster\+::aio\+::io\+\_\+service} \&io\+\_\+srv)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf application} $\ast$ {\bf new\+\_\+application} ({\bf service} \&srv)=0
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries applications\+\_\+pool}\label{classcppcms_1_1application__specific__pool_a30f874a0e0276d427a1e284dc94255fc}
+
+\item 
+class {\bfseries application}\label{classcppcms_1_1application__specific__pool_a5b97104505447c42689b96b15027d832}
+
+\item 
+class {\bfseries http\+::context}\label{classcppcms_1_1application__specific__pool_a9b7b48313dd25fddf8cea424f99697e5}
+
+\item 
+void {\bfseries booster\+::intrusive\+\_\+ptr\+\_\+release} ({\bf cppcms\+::application} $\ast$app)\label{classcppcms_1_1application__specific__pool_ade262871b4f39bdcafba817c4486f499}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+an interface for creating user applications 
+
+\doxyref{New in Cpp\+C\+MS 1.\+2}{p.}{v1_2} 
+
+\subsection{Member Function Documentation}
+\index{cppcms\+::application\+\_\+specific\+\_\+pool@{cppcms\+::application\+\_\+specific\+\_\+pool}!asynchronous\+\_\+application\+\_\+by\+\_\+io\+\_\+service@{asynchronous\+\_\+application\+\_\+by\+\_\+io\+\_\+service}}
+\index{asynchronous\+\_\+application\+\_\+by\+\_\+io\+\_\+service@{asynchronous\+\_\+application\+\_\+by\+\_\+io\+\_\+service}!cppcms\+::application\+\_\+specific\+\_\+pool@{cppcms\+::application\+\_\+specific\+\_\+pool}}
+\subsubsection[{asynchronous\+\_\+application\+\_\+by\+\_\+io\+\_\+service(booster\+::aio\+::io\+\_\+service \&io\+\_\+srv, cppcms\+::service \&srv)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf booster\+::intrusive\+\_\+ptr}$<${\bf application}$>$ cppcms\+::application\+\_\+specific\+\_\+pool\+::asynchronous\+\_\+application\+\_\+by\+\_\+io\+\_\+service (
+\begin{DoxyParamCaption}
+\item[{{\bf booster\+::aio\+::io\+\_\+service} \&}]{io\+\_\+srv, }
+\item[{{\bf cppcms\+::service} \&}]{srv}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application__specific__pool_a503dad62f37f950e015f5b3cf69b9136}
+Returns asynchronous application that runs at given \doxyref{booster\+::aio\+::io\+\_\+service}{p.}{classbooster_1_1aio_1_1io__service} constext, it the application does not exist yet, it is created
+
+Notes\+:
+
+
+\begin{DoxyItemize}
+\item if the application is created upon function call it would be created in the calling thread regardless if it is event loop thread or not
+\item If the pool isn\textquotesingle{}t mounted as asynchronous pool then \doxyref{cppcms\+\_\+error}{p.}{classcppcms_1_1cppcms__error} is thrown
+\item if the io\+\_\+srv isn\textquotesingle{}t main cppcms io\+\_\+service \doxyref{cppcms\+\_\+error}{p.}{classcppcms_1_1cppcms__error} is thrown 
+\end{DoxyItemize}\index{cppcms\+::application\+\_\+specific\+\_\+pool@{cppcms\+::application\+\_\+specific\+\_\+pool}!asynchronous\+\_\+application\+\_\+by\+\_\+io\+\_\+service@{asynchronous\+\_\+application\+\_\+by\+\_\+io\+\_\+service}}
+\index{asynchronous\+\_\+application\+\_\+by\+\_\+io\+\_\+service@{asynchronous\+\_\+application\+\_\+by\+\_\+io\+\_\+service}!cppcms\+::application\+\_\+specific\+\_\+pool@{cppcms\+::application\+\_\+specific\+\_\+pool}}
+\subsubsection[{asynchronous\+\_\+application\+\_\+by\+\_\+io\+\_\+service(booster\+::aio\+::io\+\_\+service \&io\+\_\+srv)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf booster\+::intrusive\+\_\+ptr}$<${\bf application}$>$ cppcms\+::application\+\_\+specific\+\_\+pool\+::asynchronous\+\_\+application\+\_\+by\+\_\+io\+\_\+service (
+\begin{DoxyParamCaption}
+\item[{{\bf booster\+::aio\+::io\+\_\+service} \&}]{io\+\_\+srv}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application__specific__pool_a8f819438f764bd0ff7fdaa6668816c8a}
+Returns asynchronous application that runs at given \doxyref{booster\+::aio\+::io\+\_\+service}{p.}{classbooster_1_1aio_1_1io__service} constext, it the application does not exist yet N\+U\+LL pointer is returned
+
+Notes\+:
+
+
+\begin{DoxyItemize}
+\item If the pool isn\textquotesingle{}t mounted as asynchronous pool then \doxyref{cppcms\+\_\+error}{p.}{classcppcms_1_1cppcms__error} is thrown
+\item if the io\+\_\+srv isn\textquotesingle{}t main cppcms io\+\_\+service \doxyref{cppcms\+\_\+error}{p.}{classcppcms_1_1cppcms__error} is thrown 
+\end{DoxyItemize}\index{cppcms\+::application\+\_\+specific\+\_\+pool@{cppcms\+::application\+\_\+specific\+\_\+pool}!new\+\_\+application@{new\+\_\+application}}
+\index{new\+\_\+application@{new\+\_\+application}!cppcms\+::application\+\_\+specific\+\_\+pool@{cppcms\+::application\+\_\+specific\+\_\+pool}}
+\subsubsection[{new\+\_\+application(service \&srv)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf application}$\ast$ cppcms\+::application\+\_\+specific\+\_\+pool\+::new\+\_\+application (
+\begin{DoxyParamCaption}
+\item[{{\bf service} \&}]{srv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\label{classcppcms_1_1application__specific__pool_af8acef67b879aad12c8a163b28c182b9}
+Returns newly created instance of an application, its ownership is transferred 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+cppcms/applications\+\_\+pool.\+h\end{DoxyCompactItemize}

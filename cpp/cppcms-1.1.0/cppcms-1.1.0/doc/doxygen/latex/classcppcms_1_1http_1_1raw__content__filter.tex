@@ -1,0 +1,44 @@
+\section{cppcms\+:\+:http\+:\+:raw\+\_\+content\+\_\+filter Class Reference}
+\label{classcppcms_1_1http_1_1raw__content__filter}\index{cppcms\+::http\+::raw\+\_\+content\+\_\+filter@{cppcms\+::http\+::raw\+\_\+content\+\_\+filter}}
+
+
+{\ttfamily \#include $<$cppcms/http\+\_\+content\+\_\+filter.\+h$>$}
+
+Inheritance diagram for cppcms\+:\+:http\+:\+:raw\+\_\+content\+\_\+filter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1http_1_1raw__content__filter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf on\+\_\+data\+\_\+chunk} (void const $\ast$data, size\+\_\+t data\+\_\+size)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Process of any kind of generic content data.
+
+Note\+: when \doxyref{raw\+\_\+content\+\_\+filter}{p.}{classcppcms_1_1http_1_1raw__content__filter} is used no content data is actually saved to request, for example request().raw\+\_\+post\+\_\+data() would return an empty content, so it is your responsibility to store/parse whatever content you use
+
+\doxyref{New in Cpp\+C\+MS 1.\+2}{p.}{v1_2} 
+
+\subsection{Member Function Documentation}
+\index{cppcms\+::http\+::raw\+\_\+content\+\_\+filter@{cppcms\+::http\+::raw\+\_\+content\+\_\+filter}!on\+\_\+data\+\_\+chunk@{on\+\_\+data\+\_\+chunk}}
+\index{on\+\_\+data\+\_\+chunk@{on\+\_\+data\+\_\+chunk}!cppcms\+::http\+::raw\+\_\+content\+\_\+filter@{cppcms\+::http\+::raw\+\_\+content\+\_\+filter}}
+\subsubsection[{on\+\_\+data\+\_\+chunk(void const $\ast$data, size\+\_\+t data\+\_\+size)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\+::http\+::raw\+\_\+content\+\_\+filter\+::on\+\_\+data\+\_\+chunk (
+\begin{DoxyParamCaption}
+\item[{void const $\ast$}]{data, }
+\item[{size\+\_\+t}]{data\+\_\+size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1http_1_1raw__content__filter_a552cce36f6677e882e61ed5010d0fe9f}
+You must implement this member function to handle the data
+
+A chunk of incoming data is avalible refered by data of size data\+\_\+size
+
+The request can be aborted by throwing \doxyref{abort\+\_\+upload}{p.}{classcppcms_1_1http_1_1abort__upload} 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+cppcms/http\+\_\+content\+\_\+filter.\+h\end{DoxyCompactItemize}

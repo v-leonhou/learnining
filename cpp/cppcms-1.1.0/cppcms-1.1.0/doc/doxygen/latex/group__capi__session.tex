@@ -1,0 +1,172 @@
+\section{Cpp\+C\+MS C Session A\+PI}
+\label{group__capi__session}\index{Cpp\+C\+M\+S C Session A\+PI@{Cpp\+C\+M\+S C Session A\+PI}}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Expiration Codes}
+\item 
+{\bf Error Handling}
+\item 
+{\bf Session Pool}
+\item 
+{\bf Session Interface}
+\item 
+{\bf Cookie}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct cppcms\+\_\+capi\+\_\+session\+\_\+pool {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+pool}\label{group__capi__session_gaa6314107cb95b9af90d496bb07791f47}
+
+\item 
+typedef struct cppcms\+\_\+capi\+\_\+session {\bfseries cppcms\+\_\+capi\+\_\+session}\label{group__capi__session_ga2775a7315ae09f3cb08055942ec67a89}
+
+\item 
+typedef struct cppcms\+\_\+capi\+\_\+cookie {\bfseries cppcms\+\_\+capi\+\_\+cookie}\label{group__capi__session_ga75e4f880e3d15b8bcce9f2a93e3a665b}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI cppcms\+\_\+capi\+\_\+session $\ast$ {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+new} ()\label{group__capi__session_gaa0c3488a5def28a9420832be7e2f2d8c}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI void {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+delete} (cppcms\+\_\+capi\+\_\+session $\ast$session)\label{group__capi__session_gabc4eb2627b853bb690edb0ed57940d5a}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+init} (cppcms\+\_\+capi\+\_\+session $\ast$session, cppcms\+\_\+capi\+\_\+session\+\_\+pool $\ast$pool)\label{group__capi__session_ga20e999cc223ebfa0512ab63c7f8ddb64}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+clear} (cppcms\+\_\+capi\+\_\+session $\ast$session)\label{group__capi__session_ga63c5a1dc1ca13ab4fee234011d5ad2ae}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+is\+\_\+set} (cppcms\+\_\+capi\+\_\+session $\ast$session, char const $\ast$key)\label{group__capi__session_ga49524bfc4992632856bdb3fa3888ccb3}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+erase} (cppcms\+\_\+capi\+\_\+session $\ast$session, char const $\ast$key)\label{group__capi__session_gaff25080d86fa9a6fc1813b754ad63cd3}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+get\+\_\+exposed} (cppcms\+\_\+capi\+\_\+session $\ast$session, char const $\ast$key)\label{group__capi__session_ga446ba444bdba0328382154eee1b00515}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+set\+\_\+exposed} (cppcms\+\_\+capi\+\_\+session $\ast$session, char const $\ast$key, int is\+\_\+exposed)\label{group__capi__session_gac41ca64bdae9161d28ddefb2a7970302}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI char const $\ast$ {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+get\+\_\+first\+\_\+key} (cppcms\+\_\+capi\+\_\+session $\ast$session)\label{group__capi__session_gab8843ea839fe24ac8d372845f872b4af}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI char const $\ast$ {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+get\+\_\+next\+\_\+key} (cppcms\+\_\+capi\+\_\+session $\ast$session)\label{group__capi__session_gad22aa5114d8bd3138ce0a639dbdd53f3}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI char const $\ast$ {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+get\+\_\+csrf\+\_\+token} (cppcms\+\_\+capi\+\_\+session $\ast$session)\label{group__capi__session_gabbd533f2e40eda9995043015414d28ab}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+set} (cppcms\+\_\+capi\+\_\+session $\ast$session, char const $\ast$key, char const $\ast$value)\label{group__capi__session_ga6ac43cc3626180095ba38d403593b93b}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI char const $\ast$ {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+get} (cppcms\+\_\+capi\+\_\+session $\ast$session, char const $\ast$key)\label{group__capi__session_ga3037a599b4ca1804f69801cf39c339d4}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+set\+\_\+binary\+\_\+as\+\_\+hex} (cppcms\+\_\+capi\+\_\+session $\ast$session, char const $\ast$key, char const $\ast$value)\label{group__capi__session_gaf433e5d21b5643101f696a8eb32f7723}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI char const $\ast$ {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+get\+\_\+binary\+\_\+as\+\_\+hex} (cppcms\+\_\+capi\+\_\+session $\ast$session, char const $\ast$key)\label{group__capi__session_gab9f8cf1dd085208488df9232f2c6e010}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+set\+\_\+binary} (cppcms\+\_\+capi\+\_\+session $\ast$session, char const $\ast$key, void const $\ast$value, int length)\label{group__capi__session_ga46b1cff3109efd942ffb0831c8dfdd3a}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+get\+\_\+binary} (cppcms\+\_\+capi\+\_\+session $\ast$session, char const $\ast$key, void $\ast$buf, int buffer\+\_\+size)\label{group__capi__session_ga0e988b88cbb0e55d2d0218dba04b7c53}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+get\+\_\+binary\+\_\+len} (cppcms\+\_\+capi\+\_\+session $\ast$session, char const $\ast$key)\label{group__capi__session_ga78df748922dff6e73dad3fff0951b29d}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+reset\+\_\+session} (cppcms\+\_\+capi\+\_\+session $\ast$session)\label{group__capi__session_gabfbc0864c18e59966c51c9c8918dfdcf}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+set\+\_\+default\+\_\+age} (cppcms\+\_\+capi\+\_\+session $\ast$session)\label{group__capi__session_gae7f59fdbd7a1034ba0d6fea8ee96ab26}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+set\+\_\+age} (cppcms\+\_\+capi\+\_\+session $\ast$session, int t)\label{group__capi__session_ga4fce5bda3e5d58e487f5b3586f53766d}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+get\+\_\+age} (cppcms\+\_\+capi\+\_\+session $\ast$session)\label{group__capi__session_gad9437dcfc82113d1840bd506a3b75e11}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+set\+\_\+default\+\_\+expiration} (cppcms\+\_\+capi\+\_\+session $\ast$session)\label{group__capi__session_gaba693c8a1d76352033edef02f7cad8ac}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bf cppcms\+\_\+capi\+\_\+session\+\_\+set\+\_\+expiration} (cppcms\+\_\+capi\+\_\+session $\ast$session, int t)\label{group__capi__session_ga02550e1339409fd99197c7cf1e09ee19}
+
+\begin{DoxyCompactList}\small\item\em Define expiration method. \end{DoxyCompactList}\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bf cppcms\+\_\+capi\+\_\+session\+\_\+get\+\_\+expiration} (cppcms\+\_\+capi\+\_\+session $\ast$session)\label{group__capi__session_gaaf7c2a41f0ab5380d90f1f5123da7698}
+
+\begin{DoxyCompactList}\small\item\em Get current expiration method. \end{DoxyCompactList}\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+set\+\_\+on\+\_\+server} (cppcms\+\_\+capi\+\_\+session $\ast$session, int is\+\_\+on\+\_\+server)\label{group__capi__session_ga4fbac8ef200779a796705fc269af3967}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+get\+\_\+on\+\_\+server} (cppcms\+\_\+capi\+\_\+session $\ast$session)\label{group__capi__session_ga56db457dbc5d444dcf9327cc11e7dabd}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI char const $\ast$ {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+get\+\_\+session\+\_\+cookie\+\_\+name} (cppcms\+\_\+capi\+\_\+session $\ast$session)\label{group__capi__session_gafeaa75e9e03438c8ddedc1459422de8d}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+set\+\_\+session\+\_\+cookie} (cppcms\+\_\+capi\+\_\+session $\ast$session, char const $\ast$session\+\_\+cookie\+\_\+value)\label{group__capi__session_ga0e62a6dbe8cbe986f56c189006bc43e0}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+add\+\_\+cookie\+\_\+name} (cppcms\+\_\+capi\+\_\+session $\ast$session, char const $\ast$name)\label{group__capi__session_gab12f8314e685abe0311dbcfc4245bdf7}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+load} (cppcms\+\_\+capi\+\_\+session $\ast$session)\label{group__capi__session_ga5b7346e98ccc74cf834422187afccf0f}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+save} (cppcms\+\_\+capi\+\_\+session $\ast$session)\label{group__capi__session_ga6419590deca65c6e892dcb92bf17fd38}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI cppcms\+\_\+capi\+\_\+cookie $\ast$ {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+cookie\+\_\+first} (cppcms\+\_\+capi\+\_\+session $\ast$session)\label{group__capi__session_ga1eb110edd0c2bcc544e850489f61acb4}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI cppcms\+\_\+capi\+\_\+cookie $\ast$ {\bfseries cppcms\+\_\+capi\+\_\+session\+\_\+cookie\+\_\+next} (cppcms\+\_\+capi\+\_\+session $\ast$session)\label{group__capi__session_ga1887d20f86048d48defd1bd9c3c29ed1}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI void {\bfseries cppcms\+\_\+capi\+\_\+cookie\+\_\+delete} (cppcms\+\_\+capi\+\_\+cookie $\ast$cookie)\label{group__capi__session_ga8cd7c5cc89e887ce93819fca249e4162}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI char const $\ast$ {\bfseries cppcms\+\_\+capi\+\_\+cookie\+\_\+header} (cppcms\+\_\+capi\+\_\+cookie const $\ast$cookie)\label{group__capi__session_gad61535ef24880276806445bc985bec5e}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI char const $\ast$ {\bfseries cppcms\+\_\+capi\+\_\+cookie\+\_\+header\+\_\+content} (cppcms\+\_\+capi\+\_\+cookie const $\ast$cookie)\label{group__capi__session_gab266946cab44f1f727de4a92040fd0c1}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI char const $\ast$ {\bfseries cppcms\+\_\+capi\+\_\+cookie\+\_\+name} (cppcms\+\_\+capi\+\_\+cookie const $\ast$cookie)\label{group__capi__session_ga0c78d92b50a1fe1c6f247e877d6ca3d1}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI char const $\ast$ {\bfseries cppcms\+\_\+capi\+\_\+cookie\+\_\+value} (cppcms\+\_\+capi\+\_\+cookie const $\ast$cookie)\label{group__capi__session_ga7bf72b2b09529197256a612edf56f8c1}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI char const $\ast$ {\bfseries cppcms\+\_\+capi\+\_\+cookie\+\_\+path} (cppcms\+\_\+capi\+\_\+cookie const $\ast$cookie)\label{group__capi__session_ga6566903d3b68b8996190f9630a4a1f6b}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI char const $\ast$ {\bfseries cppcms\+\_\+capi\+\_\+cookie\+\_\+domain} (cppcms\+\_\+capi\+\_\+cookie const $\ast$cookie)\label{group__capi__session_ga0584cba8e3dc0d338c916527a1ec7cf3}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bfseries cppcms\+\_\+capi\+\_\+cookie\+\_\+max\+\_\+age\+\_\+defined} (cppcms\+\_\+capi\+\_\+cookie const $\ast$cookie)\label{group__capi__session_gaad39e35f4353da489e9c6c2dcb4409c9}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI unsigned {\bfseries cppcms\+\_\+capi\+\_\+cookie\+\_\+max\+\_\+age} (cppcms\+\_\+capi\+\_\+cookie const $\ast$cookie)\label{group__capi__session_gaa6ca37a3ff8da291e937716c7b1e5afd}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bfseries cppcms\+\_\+capi\+\_\+cookie\+\_\+expires\+\_\+defined} (cppcms\+\_\+capi\+\_\+cookie const $\ast$cookie)\label{group__capi__session_ga32e1b2fe05e494fbab57866060d08ab7}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI long long {\bfseries cppcms\+\_\+capi\+\_\+cookie\+\_\+expires} (cppcms\+\_\+capi\+\_\+cookie const $\ast$cookie)\label{group__capi__session_ga08c00334d8831dcd02e7f558886c8ba8}
+
+\item 
+C\+P\+P\+C\+M\+S\+\_\+\+A\+PI int {\bfseries cppcms\+\_\+capi\+\_\+cookie\+\_\+is\+\_\+secure} (cppcms\+\_\+capi\+\_\+cookie const $\ast$cookie)\label{group__capi__session_gabd7370e499a2eec027d8b7c2d30503cc}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{New in Cpp\+C\+MS 1.\+2}{p.}{v1_2} 

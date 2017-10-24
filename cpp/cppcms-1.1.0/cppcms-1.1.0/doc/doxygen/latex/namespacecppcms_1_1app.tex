@@ -1,0 +1,39 @@
+\section{cppcms\+:\+:app Namespace Reference}
+\label{namespacecppcms_1_1app}\index{cppcms\+::app@{cppcms\+::app}}
+
+
+Flags for application pool management.  
+
+
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const int {\bf synchronous} = 0x0000\label{namespacecppcms_1_1app_af4481393e13050eeb9cc630ca94b827f}
+
+\begin{DoxyCompactList}\small\item\em Synchronous application. \end{DoxyCompactList}\item 
+static const int {\bf asynchronous} = 0x0001\label{namespacecppcms_1_1app_a6e1f18add53bf1b4e590de8c9fee3dcd}
+
+\begin{DoxyCompactList}\small\item\em Asynchronous application that operates in asynchronous mode. \end{DoxyCompactList}\item 
+static const int {\bf op\+\_\+mode\+\_\+mask} = 0x000F\label{namespacecppcms_1_1app_a4631b3adf269f7dcc10895dbf9a1e079}
+
+\begin{DoxyCompactList}\small\item\em mask to select sync vs async flags \end{DoxyCompactList}\item 
+static const int {\bf thread\+\_\+specific} = 0x0010\label{namespacecppcms_1_1app_a600c49d2b195a70c2a06efbd7100d2ac}
+
+\begin{DoxyCompactList}\small\item\em Make synchronous application thread specific. \end{DoxyCompactList}\item 
+static const int {\bf prepopulated} = 0x0020\label{namespacecppcms_1_1app_afd83c3f961e1160c6ab4fd40d0776c2e}
+
+\begin{DoxyCompactList}\small\item\em Make sure all applications are created from the beginning (ignored in thread\+\_\+specific is set) \end{DoxyCompactList}\item 
+static const int {\bf content\+\_\+filter} = 0x0040
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Flags for application pool management. 
+
+\doxyref{New in Cpp\+C\+MS 1.\+2}{p.}{v1_2} 
+
+\subsection{Variable Documentation}
+\index{cppcms\+::app@{cppcms\+::app}!content\+\_\+filter@{content\+\_\+filter}}
+\index{content\+\_\+filter@{content\+\_\+filter}!cppcms\+::app@{cppcms\+::app}}
+\subsubsection[{content\+\_\+filter}]{\setlength{\rightskip}{0pt plus 5cm}const int cppcms\+::app\+::content\+\_\+filter = 0x0040\hspace{0.3cm}{\ttfamily [static]}}\label{namespacecppcms_1_1app_a6da4e7cd31b6a90c7793b16fa6b94bd3}
+Make this asynchronous application to handle content 
