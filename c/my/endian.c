@@ -26,47 +26,25 @@ int uniontest()
     return 0;
 }
 
-int isDaduan()
-{
-    union{
-        unsigned long bit;
-        unsigned char byte[4];
-    }te;
-    te.byte[0] = 0;
-    te.byte[1] = 1;
-    te.byte[2] = 0;
-    te.byte[3] = 0;
-    return te.bit == 256;
-}
-
 int main()
 {
-    char a[7] = {'s','a',0,1,0,0,'d'};
-    char b = 20;
     printf("一般方法:\n");
-    if( isDaduan() )
+    if( isBigEndian() )
     {
         printf("大端序\n");
     }
     else {
         printf("小端序\n");
     }
-    // if( isBigEndian() )
-    // {
-    //     printf("大端序\n");
-    // }
-    // else {
-    //     printf("小端序\n");
-    // }
-    //
-    // printf("union方法:\n");
-    // if( uniontest() )
-    // {
-    //     printf("大端序\n");
-    // }
-    // else {
-    //     printf("小端序\n");
-    // }
+
+    printf("union方法:\n");
+    if( uniontest() )
+    {
+        printf("大端序\n");
+    }
+    else {
+        printf("小端序\n");
+    }
     // unsigned char buf[4] = "1234";
     return 0;
 }

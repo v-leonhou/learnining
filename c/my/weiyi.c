@@ -2,16 +2,11 @@
 #include <strings.h>
 #include <stdlib.h>
 
-struct array {
-    int len;
-    char a[0];
-};
-
 
 //打印一个数字的二进制,10进制整数转换为二进制数，并打印出二进制
 void bitcode(int b)
 {
-    printf("十进制数%d:",b);
+    printf("十进制数%d转化为二进制数为:",b);
     int a[200];
     int k,i=0;
     while(b/2)
@@ -49,19 +44,10 @@ void resize(int nSize)
 
 int main()
 {
-    // unsigned int a,b;
-    // b = (4<<2);
-    // printf("%d\n",b);
-    // a |= (4<<2);
-    // printf("%d\n",a);
     int a[10] = {2,4,6,8,9,14,15,29,68,34};
-    int i;
-    for(i=0;i<9;i++)
+    for(int i=0;i<9;i++)
     {
-        int nSize = a[i];
-        resize(nSize);
-        bitcode(nSize);
+        bitcode(a[i]);
     }
     return 0;
-
 }
