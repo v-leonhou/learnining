@@ -15,6 +15,25 @@ function xrange($start,$end)
     }
 }
 
+$r = xrange(0,1000000);
+
+// var_dump($r->c);
+echo $r->current();
+// echo $r->current();
+// echo  $r->cr
+// $r->next();
+// $r = xrange(0,1000000);
+// echo $r->current();
+// $r->next();
+// $r = xrange(0,1000000);
+// echo $r->current();
+// $r->next();
+// $r = xrange(0,1000000);
+// echo $r->current();
+// $r->next();
+// $r = xrange(0,1000000);
+// echo $r->current();
+
 
 class xrange implements iterator
 {
@@ -54,23 +73,23 @@ class xrange implements iterator
     }
 }
 
-//$r = new xrange(0,1000000);
-//$r = range(0,1000000);
-//$r = xrange(0,1000000);
-//foreach( $r as $k => $v )
-//{
-    ////echo $k . ' => ' . $v . PHP_EOL;
-//}
-
-//echo memory_get_peak_usage()/(1024*1024).'兆内存'.PHP_EOL;
-//$end = microtime_flot();
-//echo "脚本执行时间" . ($end - $start).PHP_EOL;
-function test()
-{
-    yield "nihao".PHP_EOL;
-}
-
-echo test()->current();
-var_dump(test());
-var_dump(test()->key());
-var_dump(test()->next());
+// $r = new xrange(0,1000000);
+// $r = range(0,1000000);
+// echo $r->cr;
+// foreach( $r as $k => $v )
+// {
+//     echo $k . ' => ' . $v . PHP_EOL;
+// }
+//
+// echo memory_get_peak_usage()/(1024*1024).'兆内存'.PHP_EOL;
+// $end = microtime_flot();
+// echo "脚本执行时间" . ($end - $start).PHP_EOL;
+// function test()
+// {
+//     yield "nihao".PHP_EOL;
+// }
+//
+// echo test()->current();
+// var_dump(test());
+// var_dump(test()->key());
+// var_dump(test()->next());

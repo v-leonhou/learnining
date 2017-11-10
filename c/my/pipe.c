@@ -6,57 +6,46 @@
 
 int main()
 {
-    int mypipe[2],i,m;
-    FILE *f;
+    int mypipe[2],i;
+    FILE *log;
     pid_t p;
     if( pipe(mypipe) == -1 )
     {
         perror("创建管道失败");
         return -1;
     }
+    log = fopen("pipe.log","w+");
 
-    for(i=0;i<6;i++)
+    for(i=0;i<3;i++)
     {
         p = fork();
         if( p<= (pid_t) 0)
         {
             sleep(i);
-            break;
+            char *msg = "i am %d child process\n";
+            size_t len;
+            fwrite(msg,sizeof(msg),1,log);
+            len = write(mypipe[1],msg,sizeof(msg));
         }
     }
-
-    if( p < 0 )
+    
+    char *buf = NULL;
+    if( read(mypipe[0],buf,10) )
     {
-        perror("创建进程失败");
-        return -1;
-    }
-    else if ( p == 0) {
-        close(mypipe[0]);
-        if( (f = fdopen(mypipe[1],"w")) == NULL)
-        {
-            printf("子进程打开管道失败\n");
-            return 2;
-        }
-        fprintf(f,"%d ",i);
-        fclose(f);
-        return 2;
+        printf("%s",buf);
     }
     else {
-        close(mypipe[1]);
-        if( (f = fdopen(mypipe[0],"r")) == NULL)
-        {
-            printf("父进程打开管道失败\n");
-            return 2;
-        }
-        setvbuf(f,NULL,_IONBF,0);
-        while(1)
-        {
-            if( --i < 0)
-            {
-                break;
-            }
-            fscanf(f,"%d",&m);
-            fprintf(stdout,"\n接收到子进程%d的数据\n",m);
-        }
+        printf("读取数据失败\n");
+    }
+    return 2;
+
+    int j = 5;
+    while(j-- > 0)
+    {
+        char *buf = NULL;
+        do{
+            read(mypipe[0],buf++,1);
+        }while(*buf != '\0');
+        fprintf(stdout,"\n接收到子进程%s的数据\n",buf);
     }
 }

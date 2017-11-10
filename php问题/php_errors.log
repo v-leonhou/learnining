@@ -1,0 +1,17 @@
+[06-Nov-2017 03:53:17 UTC] PHP Notice:  Undefined property: Generator::$c in /home/leonhou/src/linux-/php问题/generator.php on line 20
+[06-Nov-2017 04:05:08 UTC] PHP Fatal error:  Uncaught PhpParser\Error: Syntax error, unexpected T_CLASS, expecting ',' or ';' on line 37 in /home/leonhou/.cache/vimfiles/repos/github.com/lvht/phpfold.vim/vendor/nikic/php-parser/lib/PhpParser/ParserAbstract.php:280
+Stack trace:
+#0 /home/leonhou/.cache/vimfiles/repos/github.com/lvht/phpfold.vim/vendor/nikic/php-parser/lib/PhpParser/Parser/Multiple.php(58): PhpParser\ParserAbstract->parse('<?php\r\n\r\nfuncti...')
+#1 /home/leonhou/.cache/vimfiles/repos/github.com/lvht/phpfold.vim/vendor/nikic/php-parser/lib/PhpParser/Parser/Multiple.php(29): PhpParser\Parser\Multiple->tryParse(Object(PhpParser\Parser\Php7), '<?php\r\n\r\nfuncti...')
+#2 /home/leonhou/.cache/vimfiles/repos/github.com/lvht/phpfold.vim/php/Folder.php(38): PhpParser\Parser\Multiple->parse('<?php\r\n\r\nfuncti...')
+#3 /home/leonhou/.cache/vimfiles/repos/github.com/lvht/phpfold.vim/php/phpfold.php(7): Lvht\Phpfold\Folder->fold('/home/leonhou/s...')
+#4 {main}
+  thrown in /home/leonhou/.cache/vimfiles/repos/github.com/lvht/phpfold.vim/vendor/nikic/php-parser/lib/PhpParser/ParserAbstract.php on line 280
+[06-Nov-2017 05:18:28 UTC] PHP Fatal error:  Uncaught PhpParser\Error: Syntax error, unexpected T_CLASS, expecting ',' or ';' on line 38 in /home/leonhou/.cache/vimfiles/repos/github.com/lvht/phpfold.vim/vendor/nikic/php-parser/lib/PhpParser/ParserAbstract.php:280
+Stack trace:
+#0 /home/leonhou/.cache/vimfiles/repos/github.com/lvht/phpfold.vim/vendor/nikic/php-parser/lib/PhpParser/Parser/Multiple.php(58): PhpParser\ParserAbstract->parse('<?php\r\n\r\nfuncti...')
+#1 /home/leonhou/.cache/vimfiles/repos/github.com/lvht/phpfold.vim/vendor/nikic/php-parser/lib/PhpParser/Parser/Multiple.php(29): PhpParser\Parser\Multiple->tryParse(Object(PhpParser\Parser\Php7), '<?php\r\n\r\nfuncti...')
+#2 /home/leonhou/.cache/vimfiles/repos/github.com/lvht/phpfold.vim/php/Folder.php(38): PhpParser\Parser\Multiple->parse('<?php\r\n\r\nfuncti...')
+#3 /home/leonhou/.cache/vimfiles/repos/github.com/lvht/phpfold.vim/php/phpfold.php(7): Lvht\Phpfold\Folder->fold('/home/leonhou/s...')
+#4 {main}
+  thrown in /home/leonhou/.cache/vimfiles/repos/github.com/lvht/phpfold.vim/vendor/nikic/php-parser/lib/PhpParser/ParserAbstract.php on line 280
