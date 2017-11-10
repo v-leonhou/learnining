@@ -2,7 +2,6 @@
 #include <strings.h>
 #include <stdlib.h>
 
-
 //打印一个数字的二进制,10进制整数转换为二进制数，并打印出二进制
 void bitcode(int b)
 {
@@ -40,7 +39,6 @@ void resize(int nSize)
     nSize +=1;
     printf("%d重新resize之后的值为%d\n",a,nSize);
 }
-
 
 int main()
 {

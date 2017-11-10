@@ -53,23 +53,6 @@ int main(void)
     int a;
     test(&a);
     printf("%d\n",a);
-    // foo("sjjmed1222cm");
-    // printf("\n");
-    // print_arg(5,7,2,'P','d',"Pd");
-    // int a = (int)"Pd";
-    // printf("\n%d\n",a);
-    // char *p = "womenssddccwjjc";
-    // printf("%s\n\n\n",p);
-    // while(*p)
-    // {
-    //     switch(*p++)
-    //     {
-    //         case 's':
-    //             printf("%s\n",p);
-    //         case 'd':
-    //             printf("%s\n",p);
-    //     }
-    // }
     return 0;
 }
 

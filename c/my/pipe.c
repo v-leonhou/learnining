@@ -3,7 +3,6 @@
 #include <sys/stat.h>
 #include <strings.h>
 #include <stdio.h>
-
 int main()
 {
     int mypipe[2],i;

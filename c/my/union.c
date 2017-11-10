@@ -54,6 +54,4 @@ int main()
     test.a = 120000;
     printf("test的大小为%ld\n",sizeof(test));
     printf("test成员a的值%d ,name的值%c你好 \n\n",test.a,test.name[1]);
-
-
 }
