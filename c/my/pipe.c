@@ -2,7 +2,9 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <strings.h>
+#include "string.h"
 #include <stdio.h>
+#include "stdlib.h"
 int main()
 {
     int mypipe[2],i;
@@ -21,30 +23,28 @@ int main()
         if( p<= (pid_t) 0)
         {
             sleep(i);
-            char *msg = "i am %d child process\n";
-            size_t len;
-            fwrite(msg,sizeof(msg),1,log);
-            len = write(mypipe[1],msg,sizeof(msg));
+            close(mypipe[0]);
+            char *msg = "process\0";
+            fwrite(msg,8,1,log);
+            write(mypipe[1],msg,8);
+            exit(0);
         }
     }
-    
-    char *buf = NULL;
-    if( read(mypipe[0],buf,10) )
-    {
-        printf("%s",buf);
-    }
-    else {
-        printf("读取数据失败\n");
-    }
-    return 2;
 
-    int j = 5;
-    while(j-- > 0)
+    char *buf;
+    int a = 0;
+    while((a = read(mypipe[0],&buf,1)) > 0)
     {
-        char *buf = NULL;
-        do{
-            read(mypipe[0],buf++,1);
-        }while(*buf != '\0');
-        fprintf(stdout,"\n接收到子进程%s的数据\n",buf);
+        // printf("收到的消息%c\n",*buf);
+        if( buf == '\0')
+        {
+            printf("你好\n");
+        }
+        else {
+            write(STDOUT_FILENO,&buf,1);
+            // printf(" a的值为%d\n",a);
+        }
     }
+
+    printf("a的值为%d\n",a);
 }

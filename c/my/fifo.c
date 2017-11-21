@@ -42,5 +42,4 @@ int main()
         fscanf(a,"%s",buf);
         printf("我是父进程，读入子进程写入数据\n 接收子进程数据:%s \n",buf);
     }
-
 }

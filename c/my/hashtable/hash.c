@@ -5,17 +5,6 @@ static uint32_t _check_size(uint32_t nSize);
 static int _hash_resize(HashTable* ht);
 static uint32_t _string_hash_val(char *key);
 
-int women()
-{
-    // printf("变量a的值为%d\n",a);
-    int a,b;
-    a = _check_size(20);
-    b = _check_size(2000);
-    printf("a的值为%d\n\n",a);
-    printf("b的值为%d\n\n",b);
-    return 2;
-}
-
 static uint32_t _check_size(uint32_t nSize) /*{{{*/
 {
     nSize -= 1;
@@ -26,7 +15,6 @@ static uint32_t _check_size(uint32_t nSize) /*{{{*/
     nSize |= (nSize >> 16);
     return nSize + 1;
 }
-/*}}}*/
 
 static uint32_t _string_hash_val(char *key) /*{{{*/
 {
@@ -115,9 +103,7 @@ int hash_add(HashTable* ht, char *key, void *val) /*{{{*/
 
     arHash = ((uint32_t *)(ht)->arData) + (int32_t)nIndex;
     b->next = *arHash;
-    printf("b->next的值为%d\n",b->next);
     *arHash = idx;
-    printf("arHash的值为%d\n",*arHash);
 
     ht->nNumUsed++;
     ht->nNumOfElments++;
@@ -361,4 +347,5 @@ void hash_foreach(HashTable *ht)
         }
     }
 }
+
 
