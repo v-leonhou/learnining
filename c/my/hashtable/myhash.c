@@ -56,24 +56,16 @@ void hash_init(HashTable *ht,uint32_t size)
     ht->maskSize = ~size + 1;
     mallocSize = size * sizeof(uint32_t) + size * sizeof(struct Bucket);
     data = (char*)malloc(mallocSize);
-    ht->arData = data + size;
-    memset(data,-1,size);
+    ht->arData = data + size * sizeof(uint32_t);
+    memset(data,-1,size*sizeof(uint32_t));
 }
 
 uint32_t hash_add(HashTable *ht,char *key,char *val)
 {
-    struct Bucket b,*m,*n;
-    uint32_t h,idx;
-    char *index;
-    h = _string_hash_val(key);
-    b.key = key;
-    b.val = val;
-    b.h = h;
-    b.next = -1;
-
+    struct Bucket *m;
     if( ht->elemUsed < ht->size  )
     {
-        m = hash_get(ht,b);
+        m = hash_get(ht,key);
         if(m != NULL )
         {
             m->val = val;
@@ -83,6 +75,16 @@ uint32_t hash_add(HashTable *ht,char *key,char *val)
     else {
         hash_resize(ht);
     }
+
+    uint32_t h,idx;
+    char *index;
+    h = _string_hash_val(key);
+    b.key = key;
+    b.val = val;
+    b.h = h;
+    b.next = -1;
+
+
     n = (struct Bucket *)(ht->arData + ht->elemUsed);
     *n = b;
 
@@ -98,22 +100,22 @@ uint32_t hash_add(HashTable *ht,char *key,char *val)
     return 1;
 }
 
-struct Bucket* hash_get(HashTable *ht,struct Bucket str)
+struct Bucket* hash_get(HashTable *ht,char *key)
 {
-    uint32_t idx = str.h | ht->maskSize;
+    uint32_t h,idx,nIndex,*m;
     struct Bucket *b;
-    char *m;
-    m = ht->arData + idx;
+    h = _string_hash_val(key);
+    nIndex = h | ht->maskSize;
+    m = (uint32_t*)ht->arData + (int32_t)idx;
 
-    b = (struct Bucket *)(ht->arData + *(m));
-    while(b->next != -1)
+    while( *m != -1 )
     {
-        if( b->key == str.key )
+        b = (struct Bucket *)((struct Bucket *)ht->arData + *(m));
+        if( b->key == key )
         {
             return b;
         }
         m = b->next;
-
     }
 
     return NULL;

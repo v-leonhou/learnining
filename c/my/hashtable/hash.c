@@ -23,7 +23,6 @@ static uint32_t _string_hash_val(char *key) /*{{{*/
     char        *str = key;
         
     for (; len >= 8; len -= 8) {
-
         hash = ((hash << 5) + hash) + *str++;
         hash = ((hash << 5) + hash) + *str++;
         hash = ((hash << 5) + hash) + *str++;
@@ -53,8 +52,7 @@ void hash_init(HashTable* ht, uint32_t nSize) /*{{{*/
 {
     nSize = _check_size(nSize);
 
-    uint32_t    arDataSize, maskSize, i;
-    uint32_t    *arHash;
+    uint32_t    arDataSize, maskSize;
     char        *data;
 
     maskSize = nSize * sizeof(uint32_t);
@@ -109,7 +107,7 @@ int hash_add(HashTable* ht, char *key, void *val) /*{{{*/
     ht->nNumOfElments++;
   
 #ifdef HASH_DEBUG
-    printf("hash_add key:%s h:%ld arHash:%d arData.idx:%d\n", b->key, h, nIndex, idx);
+    printf("hash_add key:%s h:%d arHash:%d arData.idx:%d\n", b->key, h, nIndex, idx);
 #endif
     return HASH_SUCCESS;
 }
@@ -129,13 +127,13 @@ Bucket * hash_get(HashTable* ht, char *key) /*{{{*/
 
         if(key == b->key){
 #ifdef HASH_DEBUG
-            printf("hash_get key:%s h:%ld arHash:%d arData.idx:%ld\n", key, h, nIndex, idx);
+            printf("hash_get key:%s h:%d arHash:%d arData.idx:%d\n", key, h, nIndex, idx);
 #endif
             return b;
         }
         if(h == b->h && memcmp(key, b->key, strlen(key)) == 0){
 #ifdef HASH_DEBUG
-            printf("hash_get key:%s h:%ld arHash:%d arData.idx:%ld\n", key, h, nIndex, idx);
+            printf("hash_get key:%s h:%d arHash:%d arData.idx:%d\n", key, h, nIndex, idx);
 #endif
             return b;
         }
@@ -171,7 +169,7 @@ int hash_del(HashTable* ht, Bucket *bucket) /*{{{*/
         return HASH_SUCCESS;
     }
 #ifdef HASH_DEBUG
-    printf("hash_del nIndex:%d -> idx:%ld\n", nIndex, idx);
+    printf("hash_del nIndex:%d -> idx:%d\n", nIndex, idx);
 #endif
         
     b->type = BUCKET_TYPE_UNDEF;
@@ -214,7 +212,7 @@ int hash_del_by_key(HashTable* ht, char *key) /*{{{*/
         return HASH_SUCCESS;
     }
 #ifdef HASH_DEBUG
-    printf("hash_del_by_key nIndex:%d -> idx:%ld\n", nIndex, idx);
+    printf("hash_del_by_key nIndex:%d -> idx:%d\n", nIndex, idx);
 #endif
         
     b->type = BUCKET_TYPE_UNDEF;

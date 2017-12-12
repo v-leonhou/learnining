@@ -13,13 +13,17 @@ void k(int **a,int **b)
 
 int main()
 {
-    int *a,*b;
-    *a = 20;
-    *b = 10;
+    // int *a,*b;
     // k(&a,&b);
+    char *a = "women";
+    char *b = "women";
+    if( a == b)
+    {
+        printf("a = b\n");
+    }
 
-    printf("你好，世界");
-    printf("a的值为%p\nb的值为%p\n",a,b);
+    // printf("你好，世界");
+    // printf("a的值为%p\nb的值为%p\n",a,b);
 
     return 2;
 }

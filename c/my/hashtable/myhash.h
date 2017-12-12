@@ -18,7 +18,7 @@ struct array {
 typedef struct array HashTable;
 
 uint32_t hash_add(HashTable *ht,char* key,char* val);
-struct Bucket* hash_get(HashTable *ht,struct Bucket str);
+struct Bucket* hash_get(HashTable *ht,char *key);
 struct Bucket* hash_get_by_key(HashTable *ht,char *key,char* val);
 void hash_resize(HashTable *ht);
 
