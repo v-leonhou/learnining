@@ -1,4 +1,5 @@
-<?php declare(ticks =1);
+<?php
+declare(ticks =1);
 //
 $a = pcntl_signal(SIGALRM,function($sig){
     echo "women\n";
