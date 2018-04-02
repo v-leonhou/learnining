@@ -41,9 +41,9 @@
    sudo apt-get install libcurl4-gnutls-dev 
    yum -y install curl-devel
  
-9. configure: error: Cannot find OpenSSL\'s <evp.h>
+9. configure: error: Cannot find OpenSSL\'s <evp.h>   
   解决办法：
-  sudo 
+apt-get install libssl-dev libsslcommon2-dev
   yum install openssl openssl-devel
  
 10. pecl安装event失败 checking for include/event2/event.h... not found
